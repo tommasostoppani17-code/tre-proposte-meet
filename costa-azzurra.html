@@ -6,8 +6,8 @@
   <meta name="theme-color" content="#eef1ee" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <title>Costa Azzurra — Proposta</title>
-  <link rel="stylesheet" href="styles.css?v=20260926clou" />
-  <link rel="stylesheet" href="skeleton.css?v=20260926clou" />
+  <link rel="stylesheet" href="styles.css?v=20260926air" />
+  <link rel="stylesheet" href="skeleton.css?v=20260926air" />
 </head>
 <body class="is-skel listing-page">
 
@@ -233,10 +233,12 @@
             </ul>
           </section>
 
-          <details class="portal-fold" id="conto">
-            <summary><span class="portal-fold__label">Conto economico</span><span class="portal-fold__hint">Capitale · spese · ricavi</span></summary>
-            <div class="portal-fold__body">
-              <div class="money-sheet">
+          <section class="sec air-more" id="conto">
+            <h2 class="sec-title">Conto economico</h2>
+            <p class="air-more__hint">Capitale · spese · ricavi</p>
+            <div class="air-more__clip">
+              <div class="air-more__inner">
+<div class="money-sheet">
 
                 <section class="money-block">
                   <header class="money-block__head">
@@ -284,8 +286,14 @@
                 </section>
 
               </div>
+              </div>
+              <div class="air-more__fade" aria-hidden="true"></div>
             </div>
-          </details>
+            <button type="button" class="air-more__btn" aria-expanded="false">
+              <span class="air-more__more">Leggi di più</span>
+              <span class="air-more__less">Mostra meno</span>
+            </button>
+          </section>
 
           <section class="sec" id="tutele">
             <h2 class="sec-title">Chi ci tutela</h2>
@@ -363,12 +371,6 @@
             </div>
           </section>
 
-
-          <section class="sec next-step" id="prossimo-passo">
-            <h2 class="sec-title">Prossimo passo</h2>
-            <p class="manual">Entro due settimane porto due appartamenti o una villa, con il canone effettivo da versare, la pratica dell’autorizzazione comunale e il conto degli incassi del Festival e delle riunioni di lavoro.</p>
-          </section>
-
         </div>
 
         <aside class="listing-rail booking-card--desk" aria-label="Sintesi laterale">
@@ -391,7 +393,6 @@
             <a href="#conto">Conto economico</a>
             <a href="#tutele">Tutele</a>
             <a href="#chiamate">Contatti</a>
-            <a href="#prossimo-passo">Prossimo passo</a>
           </nav>
 
 
@@ -441,10 +442,11 @@
     </div>
   </main>
 
-  <script src="skeleton-markup.js?v=20260926clou" data-skel="project"></script>
-  <script src="skeleton.js?v=20260926clou"></script>
-  <script src="topbar.js?v=20260926clou"></script>
-  <script src="calldesk.js?v=20260926clou"></script>
-  <script src="rail.js?v=20260926clou"></script>
+  <script src="skeleton-markup.js?v=20260926air" data-skel="project"></script>
+  <script src="skeleton.js?v=20260926air"></script>
+  <script src="topbar.js?v=20260926air"></script>
+  <script src="calldesk.js?v=20260926air"></script>
+  <script src="air-more.js?v=20260926air"></script>
+  <script src="rail.js?v=20260926air"></script>
 </body>
 </html>

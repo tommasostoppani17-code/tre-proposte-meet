@@ -16608,3 +16608,122 @@ body.stats-page {
 .home-page .emily-card__meta > div.is-key:nth-child(2) dd {
   color: #1b7a3a !important;
 }
+
+/* =========================================================
+   AIR-MORE — Airbnb-style blur + “Leggi di più”
+   (conto + prospettiva a dieci anni)
+   ========================================================= */
+.listing-page .air-more {
+  padding: 32px 0 !important;
+  margin: 0 !important;
+  border-top: 0.5px solid rgba(60, 60, 67, 0.14) !important;
+}
+
+.listing-page .air-more__hint {
+  margin: -4px 0 16px !important;
+  font-size: 14px !important;
+  line-height: 1.4 !important;
+  color: #8e8e93 !important;
+}
+
+.listing-page .air-more__clip {
+  position: relative !important;
+  max-height: 11.5rem !important;
+  overflow: hidden !important;
+  transition: max-height 0.35s ease !important;
+}
+
+.listing-page .air-more.is-open .air-more__clip {
+  max-height: none !important;
+  overflow: visible !important;
+}
+
+.listing-page .air-more__inner {
+  /* keep content readable when open */
+}
+
+.listing-page .air-more__fade {
+  position: absolute !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  height: 5.5rem !important;
+  pointer-events: none !important;
+  background: linear-gradient(
+    to bottom,
+    rgba(245, 245, 247, 0) 0%,
+    rgba(245, 245, 247, 0.45) 28%,
+    rgba(245, 245, 247, 0.88) 65%,
+    #f5f5f7 100%
+  ) !important;
+  -webkit-backdrop-filter: blur(1.5px) !important;
+  backdrop-filter: blur(1.5px) !important;
+  mask-image: linear-gradient(to bottom, transparent, #000 55%) !important;
+  -webkit-mask-image: linear-gradient(to bottom, transparent, #000 55%) !important;
+}
+
+.listing-page .air-more.is-open .air-more__fade {
+  display: none !important;
+}
+
+.listing-page .air-more__btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  margin-top: 14px !important;
+  padding: 0 !important;
+  border: 0 !important;
+  background: none !important;
+  font: inherit !important;
+  font-size: 15px !important;
+  font-weight: 600 !important;
+  color: #1c1c1e !important;
+  text-decoration: underline !important;
+  text-underline-offset: 3px !important;
+  cursor: pointer !important;
+}
+
+.listing-page .air-more__btn:hover {
+  color: #000 !important;
+}
+
+.listing-page .air-more__less {
+  display: none !important;
+}
+
+.listing-page .air-more.is-open .air-more__more {
+  display: none !important;
+}
+
+.listing-page .air-more.is-open .air-more__less {
+  display: inline !important;
+}
+
+.listing-page .air-more__btn::after {
+  content: "" !important;
+  width: 0.45em !important;
+  height: 0.45em !important;
+  border-right: 1.5px solid currentColor !important;
+  border-bottom: 1.5px solid currentColor !important;
+  transform: rotate(45deg) translateY(-1px) !important;
+  transition: transform 0.2s ease !important;
+}
+
+.listing-page .air-more.is-open .air-more__btn::after {
+  transform: rotate(-135deg) translateY(-1px) !important;
+}
+
+/* Money sheet breathing room inside air-more */
+.listing-page .air-more .money-sheet {
+  margin-top: 4px !important;
+}
+
+.listing-page .air-more .place-stats {
+  margin-top: 8px !important;
+}
+
+/* Hide leftover next-step if any */
+.listing-page .next-step,
+.listing-page #prossimo-passo {
+  display: none !important;
+}

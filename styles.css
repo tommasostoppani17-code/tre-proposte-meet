@@ -17173,3 +17173,226 @@ body.stats-page,
 .listing-page .yr-table {
   display: none !important;
 }
+
+/* =========================================================
+   STATS FULLSCREEN — home DNA, edge-to-edge map
+   ========================================================= */
+body.stats-page {
+  background: #fff !important;
+  color: #1d1d1f !important;
+  font-size: 17px !important;
+  line-height: 1.47 !important;
+  letter-spacing: -0.011em !important;
+  overflow: hidden !important;
+}
+
+.stats-page .bento--stats,
+.stats-page .page-real {
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: #fff !important;
+}
+
+.stats-page .stats-fs {
+  position: fixed !important;
+  top: calc(var(--bar-h) + env(safe-area-inset-top, 0px)) !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  width: 100% !important;
+  height: auto !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  background: #f5f5f7 !important;
+}
+
+.stats-page .stats-fs__map {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  z-index: 1 !important;
+  background: #e8e8ed !important;
+}
+
+.stats-page .stats-fs__map .leaflet-container {
+  width: 100% !important;
+  height: 100% !important;
+  font: inherit !important;
+  background: #e8e8ed !important;
+}
+
+.stats-page .leaflet-control-attribution {
+  font-size: 10px !important;
+  background: rgba(255, 255, 255, 0.82) !important;
+  color: #86868b !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+.stats-page .leaflet-control-zoom a {
+  width: 34px !important;
+  height: 34px !important;
+  line-height: 34px !important;
+  border: 1px solid rgba(0, 0, 0, 0.06) !important;
+  border-radius: 8px !important;
+  color: #1d1d1f !important;
+  background: #fff !important;
+  box-shadow: 0 0.15rem 0.85rem rgba(0, 0, 0, 0.045) !important;
+}
+
+.stats-page .leaflet-control-zoom {
+  border: 0 !important;
+  margin: 12px 12px 0 0 !important;
+  gap: 6px !important;
+}
+
+.stats-page .leaflet-control-zoom a + a {
+  margin-top: 6px !important;
+  border-top: 1px solid rgba(0, 0, 0, 0.06) !important;
+}
+
+.stats-page .stats-map-tip {
+  font-family: inherit !important;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  color: #1d1d1f !important;
+  background: #fff !important;
+  border: 1px solid rgba(0, 0, 0, 0.06) !important;
+  border-radius: 8px !important;
+  box-shadow: 0 0.15rem 0.85rem rgba(0, 0, 0, 0.08) !important;
+  padding: 4px 8px !important;
+}
+
+.stats-page .stats-map-tip::before {
+  border-top-color: #fff !important;
+}
+
+.stats-page .stats-fs__panel {
+  position: absolute !important;
+  left: 50% !important;
+  bottom: max(16px, env(safe-area-inset-bottom, 0px)) !important;
+  transform: translateX(-50%) !important;
+  z-index: 5 !important;
+  width: min(92vw, 42rem) !important;
+  background: #fff !important;
+  border: 1px solid rgba(0, 0, 0, 0.06) !important;
+  border-radius: 0.85rem !important;
+  box-shadow: 0 0.35rem 1.4rem rgba(0, 0, 0, 0.1) !important;
+  padding: 1.05rem 1.15rem 1.15rem !important;
+}
+
+.stats-page .stats-fs__title {
+  margin: 0 0 0.45em !important;
+  font-size: clamp(1.25rem, 2.2vw, 1.55rem) !important;
+  font-weight: 300 !important;
+  letter-spacing: -0.03em !important;
+  line-height: 1.15 !important;
+  color: #1d1d1f !important;
+}
+
+.stats-page .stats-fs__lead {
+  margin: 0 0 0.85em !important;
+  font-size: clamp(0.78rem, 1.05vw, 0.88rem) !important;
+  line-height: 1.45 !important;
+  color: #6e6e73 !important;
+  font-weight: 400 !important;
+  max-width: 36em !important;
+}
+
+.stats-page .stats-fs__legend {
+  list-style: none !important;
+  margin: 0 0 0.95em !important;
+  padding: 0 !important;
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 0.55rem 1rem !important;
+}
+
+.stats-page .stats-fs__legend li {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.4rem !important;
+  font-size: 0.72rem !important;
+  color: #86868b !important;
+  font-weight: 400 !important;
+}
+
+.stats-page .stats-fs__dot {
+  width: 0.55rem !important;
+  height: 0.55rem !important;
+  border-radius: 50% !important;
+  display: inline-block !important;
+  border: 1.5px solid #fff !important;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.08) !important;
+}
+
+.stats-page .stats-fs__dot--mute { background: #c7c7cc !important; }
+.stats-page .stats-fs__dot--own { background: #86868b !important; }
+.stats-page .stats-fs__dot--pick { background: #1d1d1f !important; }
+
+.stats-page .stats-fs__cards {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 0.55rem !important;
+}
+
+.stats-page .stats-fs__card {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 0.2rem !important;
+  padding: 0.7rem 0.75rem !important;
+  border-radius: 0.65rem !important;
+  border: 1px solid rgba(0, 0, 0, 0.06) !important;
+  background: #fff !important;
+  text-decoration: none !important;
+  color: inherit !important;
+  transition: background 0.15s ease !important;
+}
+
+.stats-page .stats-fs__card:hover {
+  background: #f5f5f7 !important;
+}
+
+.stats-page .stats-fs__card strong {
+  font-size: 0.84rem !important;
+  font-weight: 500 !important;
+  color: #1d1d1f !important;
+  letter-spacing: -0.015em !important;
+}
+
+.stats-page .stats-fs__card span {
+  font-size: 0.68rem !important;
+  line-height: 1.35 !important;
+  color: #86868b !important;
+  font-weight: 400 !important;
+}
+
+@media (max-width: 734px) {
+  .stats-page .stats-fs__panel {
+    width: calc(100% - 24px) !important;
+    bottom: max(12px, env(safe-area-inset-bottom, 0px)) !important;
+    padding: 0.95rem 1rem 1.05rem !important;
+  }
+
+  .stats-page .stats-fs__cards {
+    grid-template-columns: 1fr !important;
+    gap: 0.45rem !important;
+  }
+
+  .stats-page .stats-fs__title {
+    font-size: 1.35rem !important;
+    font-weight: 500 !important;
+  }
+}
+
+/* Kill old deck leftovers on stats page */
+.stats-page .stats-flow,
+.stats-page .stats-deck,
+.stats-page .stats-nav,
+.stats-page .stats-slide {
+  display: none !important;
+}

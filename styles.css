@@ -17089,3 +17089,87 @@ body.stats-page {
     padding: 1rem 1.05rem 1.15rem !important;
   }
 }
+
+/* =========================================================
+   MINIMAL + HOME FONT ONLY + prose conti (no table look)
+   ========================================================= */
+html, body,
+body.home-page,
+body.listing-page,
+body.stats-page,
+.listing-page *,
+.home-page *,
+.stats-page * {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display",
+    "Segoe UI", Helvetica, Arial, sans-serif !important;
+}
+
+/* Home: single title */
+.home-page .home-head__eyebrow,
+.home-page .home-head__sub,
+.home-page .home-head__line--em,
+.home-page .emily-card__kind {
+  display: none !important;
+}
+
+.home-page .home-head {
+  margin-bottom: 2% !important;
+}
+
+.home-page .home-head h1 {
+  margin: 0 !important;
+}
+
+.home-page .home-head__line {
+  font-size: clamp(1.55rem, 3.2vw, 2.35rem) !important;
+  font-weight: 300 !important;
+  letter-spacing: -0.04em !important;
+  line-height: 1.12 !important;
+  color: #1d1d1f !important;
+}
+
+/* One section title only — kill secondary headings */
+.listing-page .air-more__hint,
+.listing-page .money-block__eyebrow,
+.listing-page .place-stats__title,
+.listing-page .portal-fold__hint,
+.listing-page .money-block__head h3,
+.listing-page details.portal-fold .sec-title {
+  display: none !important;
+}
+
+.listing-page .sec-title {
+  font-size: clamp(1.05rem, 1.55vw, 1.35rem) !important;
+  font-weight: 300 !important;
+  letter-spacing: -0.025em !important;
+  color: #1d1d1f !important;
+  margin: 0 0 0.75em !important;
+}
+
+/* Conti as text: highlight only */
+.listing-page .air-more .manual {
+  font-size: clamp(0.84rem, 1.1vw, 0.95rem) !important;
+  line-height: 1.5 !important;
+  color: #3a3a3c !important;
+  font-weight: 400 !important;
+  margin: 0 0 0.85em !important;
+  max-width: 38em !important;
+}
+
+.listing-page .air-more .manual .hl,
+.listing-page .manual strong.hl,
+.listing-page strong.hl {
+  background: rgba(28, 28, 30, 0.08) !important;
+  color: #1d1d1f !important;
+  font-weight: 600 !important;
+  padding: 0.05em 0.2em !important;
+  border-radius: 4px !important;
+}
+
+.listing-page .ledger,
+.listing-page .money-sheet,
+.listing-page .money-block,
+.listing-page .yr-table-wrap,
+.listing-page .yr-table {
+  display: none !important;
+}

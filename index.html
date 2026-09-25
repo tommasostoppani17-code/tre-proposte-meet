@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=0.75, viewport-fit=cover" />
+  <meta name="theme-color" content="#ffffff" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <title>Proposte</title>
+  <link rel="stylesheet" href="styles.css?v=20260926color" />
+  <link rel="stylesheet" href="skeleton.css?v=20260926color" />
+</head>
+<body class="is-skel home-page">
+
+    <header class="apex-header">
+    <div class="apex-bar">
+      <div class="apex-bar__inner">
+        <a class="apex-bar__logo" href="index.html"><span class="apex-bar__name">Proposte</span></a>
+        <nav class="apex-bar__nav" aria-label="Progetti">
+          <a class="apex-bar__link" href="saint-moritz.html">Saint-Moritz</a>
+          <a class="apex-bar__link" href="lapponia.html">Rovaniemi</a>
+          <a class="apex-bar__link" href="costa-azzurra.html">Costa Azzurra</a>
+          <a class="apex-bar__pill" href="#list">Scegli</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main aria-busy="true" class="bento bento--home" id="list">
+    <div class="skel-root" aria-hidden="true"></div>
+    <p class="skel-status" role="status" aria-live="polite">Caricamento…</p>
+    <div class="page-real" aria-hidden="true">
+
+      <header class="home-head">
+        <p class="home-head__eyebrow">Tre idee · tre modi di entrare</p>
+        <h1>
+          <span class="home-head__line">Le mie tre proposte</span>
+          <span class="home-head__line home-head__line--em">spiegate in modo semplice.</span>
+        </h1>
+        <p class="home-head__sub">Tu metti i soldi. Io mi occupo di gestire e affittare.</p>
+      </header>
+
+      <div class="home-air">
+
+        <a class="emily-card" href="saint-moritz.html">
+          <div class="emily-card__media" style="background-image:url('assets/attr-sm-muottas.jpg')">
+            <span class="flag-chip" title="Svizzera" aria-label="Svizzera">
+              <svg viewBox="0 0 36 36" width="36" height="36" aria-hidden="true">
+                <circle cx="18" cy="18" r="17" fill="#FF3B30"/>
+                <rect x="15" y="8" width="6" height="20" rx="1.5" fill="#fff"/>
+                <rect x="8" y="15" width="20" height="6" rx="1.5" fill="#fff"/>
+              </svg>
+            </span>
+          </div>
+          <div class="emily-card__body">
+            <p class="emily-card__kind">Svizzera · solo affitto · inverno</p>
+            <h2>Saint-Moritz</h2>
+            <p class="emily-card__sub">Prendiamo due appartamenti in affitto e li diamo ai turisti d’inverno. Non si compra casa: si parte con meno soldi e si vede il ritorno entro uno o due anni.</p>
+            <p class="emily-card__plain">Per iniziare servono circa 40–70 mila euro. Il guadagno arriva soprattutto da dicembre a marzo.</p>
+          </div>
+        </a>
+
+        <a class="emily-card" href="lapponia.html">
+          <div class="emily-card__media" style="background-image:url('assets/attr-lap-aurora.jpg')">
+            <span class="flag-chip" title="Finlandia" aria-label="Finlandia">
+              <svg viewBox="0 0 36 36" width="36" height="36" aria-hidden="true">
+                <circle cx="18" cy="18" r="17" fill="#fff" stroke="#E5E5E5" stroke-width="1"/>
+                <rect x="14" y="6" width="7" height="24" rx="1" fill="#003580"/>
+                <rect x="5" y="14.5" width="26" height="7" rx="1" fill="#003580"/>
+              </svg>
+            </span>
+          </div>
+          <div class="emily-card__body">
+            <p class="emily-card__kind">Finlandia · si compra · resta vostro</p>
+            <h2>Rovaniemi</h2>
+            <p class="emily-card__sub">Compriamo un pezzo di terra, due casette e una sauna. D’inverno si affittano. Se un giorno uscite, si vende il mattone: resta un bene vostro.</p>
+            <p class="emily-card__plain">Per iniziare servono circa 105–125 mila euro. Il guadagno è d’inverno; d’estate si coprono le spese.</p>
+          </div>
+        </a>
+
+        <a class="emily-card" href="costa-azzurra.html">
+          <div class="emily-card__media" style="background-image:url('assets/attr-ca-croisette.jpg')">
+            <span class="flag-chip" title="Francia" aria-label="Francia">
+              <svg viewBox="0 0 36 36" width="36" height="36" aria-hidden="true">
+                <circle cx="18" cy="18" r="17" fill="#fff"/>
+                <path d="M1.2 18a16.8 16.8 0 0 1 11.2-15.8v31.6A16.8 16.8 0 0 1 1.2 18z" fill="#002395"/>
+                <path d="M34.8 18a16.8 16.8 0 0 1-11.2 15.8V2.2A16.8 16.8 0 0 1 34.8 18z" fill="#ED2939"/>
+              </svg>
+            </span>
+          </div>
+          <div class="emily-card__body">
+            <p class="emily-card__kind">Francia · solo affitto · estate ed eventi</p>
+            <h2>Costa Azzurra</h2>
+            <p class="emily-card__sub">Uno o due appartamenti a Cannes o Antibes. Si lavora sull’estate e sui grandi eventi. Non sostituisce l’inverno: è un pezzo in più.</p>
+            <p class="emily-card__plain">Per iniziare servono circa 55–115 mila euro. Il periodo forte è da maggio a settembre.</p>
+          </div>
+        </a>
+
+      </div>
+
+      <div class="home-stats-wrap">
+        <a class="apple-stats-btn" href="stats.html">Perché proprio queste tre</a>
+      </div>
+
+    </div>
+  </main>
+
+  <script src="skeleton-markup.js?v=20260926color" data-skel="home"></script>
+  <script src="skeleton.js?v=20260926color"></script>
+  <script src="topbar.js?v=20260926color"></script>
+</body>
+</html>

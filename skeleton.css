@@ -1,0 +1,356 @@
+/* Skeleton — shimmer, anti-CLS, mirrors new home + 65/32.5 listing */
+
+.skel {
+  background: #e8eaed;
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  pointer-events: none;
+}
+
+.skel::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transform: translateX(-100%);
+  background-image: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.45) 45%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  animation: sk-shimmer 1.45s infinite linear;
+}
+
+@keyframes sk-shimmer {
+  100% { transform: translateX(100%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skel::after {
+    animation: none;
+    opacity: 0.4;
+  }
+}
+
+.skel-status {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+body.is-ready .skel-status { display: none; }
+
+.skel-root {
+  display: none;
+  flex-direction: column;
+  gap: 0;
+  width: 100%;
+  pointer-events: none;
+  user-select: none;
+}
+
+body.is-skel .skel-root { display: flex; }
+
+.page-real { display: none; width: 100%; }
+body.is-skel .page-real { display: none !important; }
+body.is-ready .skel-root { display: none !important; }
+
+body.is-ready .page-real {
+  display: block !important;
+  animation: none;
+}
+
+@keyframes sk-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body.is-ready .page-real { animation: none; }
+}
+
+/* —— HOME (fluid % shell) —— */
+.skel-home-shell {
+  width: 94%;
+  max-width: 90rem;
+  margin: 0 auto;
+  padding: 1.5% 0 4%;
+  box-sizing: border-box;
+}
+
+.skel-home-title {
+  max-width: 28rem;
+  margin: 3% auto 4%;
+  text-align: center;
+}
+
+.skel-home-air {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.75%;
+  width: 100%;
+}
+
+.skel-emily-card {
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 0.85rem;
+  overflow: hidden;
+  box-shadow: 0 0.15rem 0.85rem rgba(0, 0, 0, 0.04);
+}
+
+.skel-emily-media {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border-radius: 0 !important;
+}
+
+.skel-emily-body {
+  padding: 5.5%;
+}
+
+.skel-home-stats {
+  margin: 3.5% auto 2%;
+  text-align: center;
+}
+
+@media (max-width: 700px) {
+  .skel-home-shell { width: 92%; }
+  .skel-home-air {
+    grid-template-columns: 1fr;
+    gap: 4.5%;
+  }
+  .skel-emily-media { aspect-ratio: 16 / 10; }
+}
+
+/* —— PROJECT (gallery + 65 / 32.5) —— */
+.skel-project-shell {
+  width: 94%;
+  max-width: 90rem;
+  margin: 0 auto;
+  padding: 1.25vh 0 4vh;
+  box-sizing: border-box;
+}
+
+.skel-photo-grid {
+  display: grid;
+  grid-template-columns: 1.55fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 0.4rem;
+  width: 100%;
+  aspect-ratio: 21 / 9;
+  border-radius: 0.875rem;
+  overflow: hidden;
+  margin: 0 0 2vh;
+  background: #e8eaed;
+}
+
+.skel-pg-main {
+  grid-row: 1 / -1;
+  border-radius: 0 !important;
+  height: 100% !important;
+}
+
+.skel-pg-cell {
+  border-radius: 0 !important;
+  height: 100% !important;
+  min-height: 0;
+}
+
+.skel-listing-layout {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  width: 100%;
+  gap: 2.5%;
+}
+
+.skel-listing-main {
+  flex: 0 0 64%;
+  width: 64%;
+  max-width: 64%;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.skel-booking {
+  flex: 0 0 33%;
+  width: 33%;
+  max-width: 33%;
+  min-width: 0;
+  position: sticky;
+  top: calc(var(--bar-h, 52px) + 2.5vh);
+  align-self: flex-start;
+  height: auto;
+}
+
+.skel-booking__inner {
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 0.875rem;
+  box-shadow: 0 0.625rem 1.875rem rgba(0, 0, 0, 0.04);
+  padding: 1.15rem 1.1rem 1.25rem;
+  box-sizing: border-box;
+}
+
+.skel-hero-card,
+.skel-section-card {
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  border-radius: 0.875rem;
+  box-shadow: 0 0.25rem 1.25rem rgba(0, 0, 0, 0.02);
+  padding: 1.35rem;
+  box-sizing: border-box;
+}
+
+.skel-h1 {
+  width: 48%;
+  height: 1.5rem;
+  margin-bottom: 0.55rem;
+  border-radius: 5px;
+}
+
+.skel-meta {
+  width: 78%;
+  height: 0.75rem;
+  border-radius: 4px;
+  margin-bottom: 0.35rem;
+}
+
+.skel-meta.w50 { width: 52%; }
+
+.skel-money {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.skel-money__cell {
+  background: #f5f5f7;
+  border-radius: 0.75rem;
+  padding: 0.85rem 0.9rem;
+}
+
+.skel-lab {
+  width: 55%;
+  height: 0.55rem;
+  margin-bottom: 0.55rem;
+}
+
+.skel-val {
+  width: 70%;
+  height: 1.25rem;
+}
+
+.skel-section-card .skel-title {
+  width: 36%;
+  height: 1rem;
+  margin-bottom: 0.85rem;
+  border-radius: 4px;
+}
+
+.skel-section-card .skel-line {
+  width: 100%;
+  height: 0.7rem;
+  margin-bottom: 0.45rem;
+  border-radius: 4px;
+}
+
+.skel-section-card .skel-line.w90 { width: 90%; }
+.skel-section-card .skel-line.w70 { width: 70%; margin-bottom: 0; }
+
+.skel-vision {
+  display: grid;
+  grid-template-columns: 1.45fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 0.55rem;
+  min-height: 14rem;
+}
+
+.skel-vision .skel-big {
+  grid-row: 1 / -1;
+  border-radius: 0.75rem !important;
+  min-height: 14rem;
+}
+
+.skel-vision .skel-side {
+  border-radius: 0.75rem !important;
+  min-height: 8.5rem;
+}
+
+.skel-annunci {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.65rem;
+  margin-top: 0.85rem;
+}
+
+@media (max-width: 900px) {
+  .skel-project-shell { width: 92%; }
+
+  .skel-photo-grid {
+    aspect-ratio: 16 / 10;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1.2fr 1fr;
+  }
+
+  .skel-pg-main {
+    grid-column: 1 / -1;
+    grid-row: 1;
+    min-height: 8rem;
+  }
+
+  .skel-listing-layout {
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .skel-listing-main,
+  .skel-booking {
+    flex: 0 0 100%;
+    width: 100%;
+    max-width: 100%;
+    position: relative;
+    top: auto;
+  }
+
+  .skel-annunci { grid-template-columns: 1fr; }
+}
+
+/* Home/listing page background while skeleton shows */
+body.is-skel.home-page {
+  background: #fff;
+}
+
+body.is-skel.listing-page {
+  background: #f5f5f7;
+}
+
+body.is-skel .bento {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+}
+
+.skel-stats-shell {
+  width: 94%;
+  max-width: 90rem;
+  margin: 4vh auto 6vh;
+  box-sizing: border-box;
+}
+.skel-stats-map {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  border-radius: 1.1rem !important;
+  min-height: 14rem;
+}

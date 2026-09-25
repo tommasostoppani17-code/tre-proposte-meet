@@ -1,0 +1,1211 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tre progetti — Meet</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #12161c;
+      --soft: #5a6573;
+      --line: #d8dee6;
+      --paper: #ffffff;
+      --wash: #eef2f6;
+      --sky: #d9e6f0;
+      --deep: #16324a;
+      --forest: #1c3d34;
+      --sand: #3d2e24;
+      --accent: #c45c26;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      font-family: "Outfit", system-ui, sans-serif;
+      font-weight: 400;
+      line-height: 1.5;
+      background:
+        linear-gradient(180deg, #dce7ef 0%, var(--wash) 28%, #f4f6f8 100%);
+    }
+
+    .page {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 40px 24px 96px;
+    }
+
+    /* COVER */
+    .cover {
+      padding: 48px 40px 44px;
+      background:
+        linear-gradient(135deg, rgba(22,50,74,.92), rgba(28,61,52,.88)),
+        url("assets/progetto-saint-moritz.png") center/cover;
+      color: #f7fafc;
+      margin-bottom: 28px;
+    }
+
+    .cover .kicker {
+      font-size: 12px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      opacity: 0.75;
+      margin-bottom: 18px;
+    }
+
+    .cover h1 {
+      font-family: "Fraunces", Georgia, serif;
+      font-weight: 650;
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      line-height: 1.12;
+      margin: 0 0 16px;
+      max-width: 14ch;
+      letter-spacing: -0.02em;
+    }
+
+    .cover p {
+      margin: 0;
+      max-width: 42ch;
+      font-size: 1.05rem;
+      opacity: 0.9;
+    }
+
+    .cover .deal {
+      margin-top: 28px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,.25);
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      font-size: 14px;
+    }
+
+    .cover .deal b {
+      display: block;
+      font-family: "Fraunces", Georgia, serif;
+      font-size: 1.15rem;
+      font-weight: 650;
+      margin-bottom: 4px;
+    }
+
+    .cover .deal span { opacity: 0.75; }
+
+    @media (max-width: 700px) {
+      .cover { padding: 32px 22px; }
+      .cover .deal { grid-template-columns: 1fr; }
+    }
+
+    /* SECTION TITLE */
+    .section-title {
+      margin: 40px 0 16px;
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .section-title h2 {
+      margin: 0;
+      font-family: "Fraunces", Georgia, serif;
+      font-size: 1.55rem;
+      font-weight: 650;
+    }
+
+    .section-title p {
+      margin: 0;
+      color: var(--soft);
+      font-size: 14px;
+    }
+
+    /* SUMMARY ROW */
+    .summary {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-bottom: 12px;
+    }
+
+    @media (max-width: 860px) {
+      .summary { grid-template-columns: 1fr; }
+    }
+
+    .summary a {
+      text-decoration: none;
+      color: inherit;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      padding: 22px 20px 20px;
+      display: block;
+      transition: border-color .2s, transform .2s;
+    }
+
+    .summary a:hover {
+      border-color: var(--deep);
+      transform: translateY(-2px);
+    }
+
+    .summary .num {
+      font-size: 12px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--soft);
+      margin-bottom: 10px;
+    }
+
+    .summary h3 {
+      margin: 0 0 8px;
+      font-family: "Fraunces", Georgia, serif;
+      font-size: 1.35rem;
+      font-weight: 650;
+    }
+
+    .summary .place {
+      color: var(--soft);
+      font-size: 14px;
+      margin-bottom: 18px;
+    }
+
+    .summary .stat {
+      border-top: 1px solid var(--line);
+      padding-top: 14px;
+      display: grid;
+      gap: 8px;
+      font-size: 14px;
+    }
+
+    .summary .stat div {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .summary .stat strong {
+      font-weight: 600;
+      text-align: right;
+    }
+
+    /* PROJECT SLIDE */
+    .project {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      margin: 36px 0;
+      overflow: hidden;
+    }
+
+    .project-hero {
+      display: grid;
+      grid-template-columns: 1.15fr 1fr;
+      min-height: 320px;
+    }
+
+    @media (max-width: 860px) {
+      .project-hero { grid-template-columns: 1fr; }
+    }
+
+    .project-hero img {
+      width: 100%;
+      height: 100%;
+      min-height: 280px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .project-intro {
+      padding: 36px 32px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background: #fbfcfd;
+    }
+
+    .project-intro .tag {
+      font-size: 12px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--soft);
+      margin-bottom: 12px;
+    }
+
+    .project-intro h2 {
+      margin: 0 0 12px;
+      font-family: "Fraunces", Georgia, serif;
+      font-size: clamp(1.6rem, 3vw, 2.1rem);
+      font-weight: 650;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+    }
+
+    .project-intro .where {
+      font-size: 1.05rem;
+      margin: 0 0 18px;
+      color: var(--soft);
+    }
+
+    .project-intro .why {
+      margin: 0;
+      max-width: 36ch;
+      font-size: 1rem;
+    }
+
+    /* NUMBERS STRIP */
+    .numbers {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      background: var(--wash);
+    }
+
+    @media (max-width: 860px) {
+      .numbers { grid-template-columns: 1fr 1fr; }
+    }
+
+    .numbers > div {
+      padding: 20px 18px;
+      border-right: 1px solid var(--line);
+    }
+
+    .numbers > div:last-child { border-right: none; }
+
+    @media (max-width: 860px) {
+      .numbers > div:nth-child(2n) { border-right: none; }
+      .numbers > div:nth-child(1),
+      .numbers > div:nth-child(2) { border-bottom: 1px solid var(--line); }
+    }
+
+    .numbers .label {
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--soft);
+      margin-bottom: 6px;
+    }
+
+    .numbers .value {
+      font-family: "Fraunces", Georgia, serif;
+      font-size: 1.35rem;
+      font-weight: 650;
+      line-height: 1.2;
+    }
+
+    .numbers .hint {
+      margin-top: 4px;
+      font-size: 12px;
+      color: var(--soft);
+    }
+
+    /* CONTENT BODY */
+    .project-body {
+      padding: 28px 32px 32px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px 36px;
+    }
+
+    @media (max-width: 860px) {
+      .project-body {
+        grid-template-columns: 1fr;
+        padding: 22px;
+      }
+    }
+
+    .field h3 {
+      margin: 0 0 10px;
+      font-size: 12px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--soft);
+      font-weight: 600;
+    }
+
+    .field p {
+      margin: 0;
+      font-size: 0.98rem;
+    }
+
+    .field ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .field li {
+      position: relative;
+      padding: 0 0 10px 0;
+      margin: 0;
+      font-size: 0.98rem;
+      border-bottom: 1px solid #eef1f4;
+    }
+
+    .field li:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .field.wide { grid-column: 1 / -1; }
+
+    .next-step {
+      grid-column: 1 / -1;
+      background: var(--deep);
+      color: #f4f7fa;
+      padding: 20px 22px;
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 16px;
+      align-items: start;
+    }
+
+    @media (max-width: 600px) {
+      .next-step { grid-template-columns: 1fr; }
+    }
+
+    .next-step .label {
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      opacity: 0.7;
+      padding-top: 3px;
+    }
+
+    .next-step p {
+      margin: 0;
+      font-size: 1rem;
+      line-height: 1.45;
+    }
+
+    .vision-box {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      border: 1px solid var(--line);
+      background: #f7faf8;
+    }
+
+    @media (max-width: 700px) {
+      .vision-box { grid-template-columns: 1fr; }
+    }
+
+    .vision-box > div {
+      padding: 18px 20px;
+    }
+
+    .vision-box > div:first-child {
+      border-right: 1px solid var(--line);
+    }
+
+    @media (max-width: 700px) {
+      .vision-box > div:first-child {
+        border-right: none;
+        border-bottom: 1px solid var(--line);
+      }
+    }
+
+    .vision-box h3 {
+      margin: 0 0 10px;
+      font-size: 12px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--soft);
+      font-weight: 600;
+    }
+
+    .vision-box p {
+      margin: 0 0 8px;
+      font-size: 0.98rem;
+    }
+
+    .vision-box p:last-child { margin-bottom: 0; }
+
+    .suppliers {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    @media (max-width: 700px) {
+      .suppliers { grid-template-columns: 1fr; }
+    }
+
+    .supplier {
+      border: 1px solid var(--line);
+      padding: 14px 16px;
+      background: #fbfcfd;
+    }
+
+    .supplier .who {
+      font-family: "Fraunces", Georgia, serif;
+      font-weight: 650;
+      font-size: 1.05rem;
+      margin-bottom: 4px;
+    }
+
+    .supplier .what {
+      font-size: 13px;
+      color: var(--soft);
+      margin-bottom: 8px;
+    }
+
+    .supplier .price {
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .supplier a {
+      font-size: 13px;
+      color: var(--deep);
+    }
+
+    .ops-grid {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    @media (max-width: 700px) {
+      .ops-grid { grid-template-columns: 1fr; }
+    }
+
+    .ops-card {
+      border: 1px solid var(--line);
+      padding: 16px 18px;
+      background: #fbfcfd;
+    }
+
+    .ops-card h3 {
+      margin: 0 0 10px;
+      font-size: 12px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--soft);
+      font-weight: 600;
+    }
+
+    .ops-card p, .ops-card li {
+      margin: 0;
+      font-size: 0.95rem;
+    }
+
+    .ops-card ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .ops-card li {
+      padding: 6px 0;
+      border-bottom: 1px solid #eef1f4;
+    }
+
+    .ops-card li:last-child { border-bottom: none; padding-bottom: 0; }
+
+    .legal {
+      grid-column: 1 / -1;
+      border: 1px solid var(--line);
+      padding: 18px 20px;
+      background: #f4f7fa;
+    }
+
+    .legal-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 12px;
+      margin-bottom: 12px;
+      flex-wrap: wrap;
+    }
+
+    .legal-top h3 {
+      margin: 0;
+      font-size: 12px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--soft);
+      font-weight: 600;
+    }
+
+    .complexity {
+      font-family: "Fraunces", Georgia, serif;
+      font-weight: 650;
+      font-size: 1.05rem;
+    }
+
+    .complexity.easy { color: #1f6b4a; }
+    .complexity.medium { color: #8a5a12; }
+    .complexity.hard { color: #8b2e2e; }
+
+    .legal p { margin: 0 0 8px; font-size: 0.95rem; }
+    .legal p:last-child { margin-bottom: 0; }
+
+    .months {
+      grid-column: 1 / -1;
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12px;
+      background: #fff;
+    }
+
+    .months th, .months td {
+      border: 1px solid var(--line);
+      padding: 8px 4px;
+      text-align: center;
+    }
+
+    .months th {
+      background: #eef2f6;
+      font-weight: 600;
+      font-size: 11px;
+    }
+
+    .months td.hi { background: #e8f3ec; font-weight: 600; }
+    .months td.mid { background: #f7f3e8; }
+    .months td.lo { background: #f3f4f6; color: #6a7380; }
+
+    .months-note {
+      grid-column: 1 / -1;
+      margin: -4px 0 0;
+      font-size: 12px;
+      color: var(--soft);
+    }
+
+    /* CLOSING */
+    .closing {
+      margin-top: 48px;
+      padding: 36px 32px;
+      background: var(--ink);
+      color: #f2f4f6;
+    }
+
+    .closing h2 {
+      margin: 0 0 20px;
+      font-family: "Fraunces", Georgia, serif;
+      font-size: 1.7rem;
+      font-weight: 650;
+    }
+
+    .closing ol {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      counter-reset: step;
+      display: grid;
+      gap: 14px;
+    }
+
+    .closing li {
+      counter-increment: step;
+      display: grid;
+      grid-template-columns: 36px 1fr;
+      gap: 14px;
+      align-items: start;
+      font-size: 1.02rem;
+    }
+
+    .closing li::before {
+      content: counter(step);
+      font-family: "Fraunces", Georgia, serif;
+      font-weight: 650;
+      font-size: 1.1rem;
+      width: 36px;
+      height: 36px;
+      border: 1px solid rgba(255,255,255,.28);
+      display: grid;
+      place-items: center;
+    }
+
+    .sources {
+      margin-top: 28px;
+      padding-top: 18px;
+      border-top: 1px solid rgba(255,255,255,.18);
+      font-size: 12px;
+      opacity: 0.65;
+      line-height: 1.5;
+    }
+
+    .hint-bar {
+      font-size: 13px;
+      color: var(--soft);
+      margin-bottom: 18px;
+    }
+
+    a.link {
+      color: var(--deep);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    @media print {
+      body { background: white; }
+      .hint-bar { display: none; }
+      .project { break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <p class="hint-bar">Condividi questo schermo nel Meet. Per PDF: Cmd + P.</p>
+
+    <header class="cover">
+      <div class="kicker">Proposta operativa</div>
+      <h1>Tre progetti. Tre livelli di capitale.</h1>
+      <p>
+        Tu scegli quanto investire. Io gestisco vendite e commercializzazione da remoto.
+      </p>
+      <div class="deal">
+        <div>
+          <b>Saint-Moritz</b>
+          <span>45-70 mila · lease veloce</span>
+        </div>
+        <div>
+          <b>Lapponia villaggio</b>
+          <span>120-170 mila fase 1 · poi 10 casette</span>
+        </div>
+        <div>
+          <b>Costa Azzurra</b>
+          <span>80-180 mila · eventi estate</span>
+        </div>
+      </div>
+    </header>
+
+    <div class="section-title">
+      <h2>Confronto rapido</h2>
+      <p>Clicca un progetto per scorrere al dettaglio</p>
+    </div>
+
+    <nav class="summary">
+      <a href="#st-moritz">
+        <div class="num">Progetto 1</div>
+        <h3>Saint-Moritz</h3>
+        <div class="place">Svizzera · ingresso leggero</div>
+        <div class="stat">
+          <div><span>Capitale</span><strong>45-70k</strong></div>
+          <div><span>Ricavo dic.</span><strong>30-55k</strong></div>
+          <div><span>Partenza</span><strong>4-8 settimane</strong></div>
+        </div>
+      </a>
+      <a href="#lapponia">
+        <div class="num">Progetto 2</div>
+        <h3>Lapponia</h3>
+        <div class="place">10 casette + spa cupola · la piu smart</div>
+        <div class="stat">
+          <div><span>Fase 1</span><strong>120-170k</strong></div>
+          <div><span>Visione 10</span><strong>280-400k</strong></div>
+          <div><span>Kit in</span><strong>6-12 settimane</strong></div>
+        </div>
+      </a>
+      <a href="#costa">
+        <div class="num">Progetto 3</div>
+        <h3>Costa Azzurra</h3>
+        <div class="place">Francia · eventi e estate</div>
+        <div class="stat">
+          <div><span>Capitale</span><strong>80-180k</strong></div>
+          <div><span>Festival</span><strong>20-40k</strong></div>
+          <div><span>Partenza</span><strong>6-12 settimane</strong></div>
+        </div>
+      </a>
+    </nav>
+
+    <!-- PROJECT 1 -->
+    <section class="project" id="st-moritz">
+      <div class="project-hero">
+        <img src="assets/progetto-saint-moritz.png" alt="Saint-Moritz inverno" />
+        <div class="project-intro">
+          <div class="tag">Progetto 1 · Light</div>
+          <h2>Saint-Moritz</h2>
+          <p class="where">Dove: Engadina, Svizzera. Due appartamenti in affitto lungo termine, rivenduti ai turisti in alta stagione.</p>
+          <p class="why">Perche: dicembre e inverno pagano tariffe molto piu alte delle destinazioni citta. Poco capitale bloccato, cassa piu veloce.</p>
+        </div>
+      </div>
+
+      <div class="numbers">
+        <div>
+          <div class="label">Capitale iniziale</div>
+          <div class="value">45-70k euro</div>
+          <div class="hint">deposito, affitto, arredo</div>
+        </div>
+        <div>
+          <div class="label">Prezzo notte</div>
+          <div class="value">350-700 euro</div>
+          <div class="hint">dicembre, fascia media-alta</div>
+        </div>
+        <div>
+          <div class="label">Ricavo stimato</div>
+          <div class="value">30-55k euro</div>
+          <div class="hint">solo dicembre, 2 apt</div>
+        </div>
+        <div>
+          <div class="label">Tempo</div>
+          <div class="value">4-8 settimane</div>
+          <div class="hint">da contratto a vendite</div>
+        </div>
+      </div>
+
+      <div class="project-body">
+        <div class="field">
+          <h3>Mercato</h3>
+          <ul>
+            <li>Turisti high-spend da Europa, USA, Medio Oriente, Asia</li>
+            <li>Circa 240 listing Airbnb attivi in zona</li>
+            <li>Soggiorno medio 5-6 notti, picco dicembre-febbraio</li>
+          </ul>
+        </div>
+        <div class="field">
+          <h3>Prezzi di riferimento</h3>
+          <ul>
+            <li>Affitto lungo: spesso 2.500-5.200 CHF al mese</li>
+            <li>Vendita turistica 2 camere in picco: 400-700 CHF a notte</li>
+            <li>Media Airbnb annuale intorno a 231 euro, dicembre molto sopra</li>
+          </ul>
+        </div>
+        <div class="field">
+          <h3>Costi da coprire</h3>
+          <ul>
+            <li>Iniziali: deposito, 2-3 mesi di affitto, restyling soft, foto, listing</li>
+            <li>Mensili: circa 5-11k euro per due appartamenti + cleaning</li>
+            <li>Obiettivo: le prime settimane di alta stagione devono ripagare il rischio</li>
+          </ul>
+        </div>
+        <div class="field">
+          <h3>Dove cercare (costi piu bassi)</h3>
+          <ul>
+            <li>Comparis, RealAdvisor, Homegate, LOGA Engadin, PARLI</li>
+            <li>Meglio Celerina, Samedan o Pontresina rispetto al centro Dorf</li>
+            <li>Prima di firmare: verificare regole di subaffitto turistico in Svizzera</li>
+          </ul>
+        </div>
+
+        <div class="ops-grid">
+          <div class="ops-card">
+            <h3>Alta stagione e full booked</h3>
+            <ul>
+              <li>Alta vera: circa 4 mesi (dicembre-marzo). Febbraio e il picco assoluto.</li>
+              <li>Seconda onda: luglio-agosto (estate Engadina), circa 2 mesi buoni.</li>
+              <li>Full booked facile: Natale/Capodanno, febbraio (ferie scolastiche CH + eventi sul lago), settimana maratona sci di fondo a marzo.</li>
+              <li>Difficile riempire: maggio, ottobre, novembre (molti hotel chiudono).</li>
+              <li>Sui mesi forti: con listing buono e prezzo giusto, 70-90% occupazione e realistico. Full 100% solo sulle settimane evento se prenoti mesi prima.</li>
+            </ul>
+          </div>
+          <div class="ops-card">
+            <h3>Eventi speciali (influenzano i prezzi)</h3>
+            <ul>
+              <li>Natale / Capodanno (fine dic-inizio gen): tariffe +40/80% vs media inverno</li>
+              <li>Snow Polo e auto classiche (fine gen): spike locale</li>
+              <li>Corse di cavalli sul lago ghiacciato (febbraio, piu domeniche): febbraio = mese piu caro</li>
+              <li>World Cup sci (dicembre, date variabili): weekend pieni</li>
+              <li>Engadin Ski Marathon (marzo): settimana forte</li>
+              <li>Estate: Village Market, Auto Week, eventi lago (lug-set) = supporto prezzi estate</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="field wide">
+          <h3>Stima prezzi medi mercato Airbnb (euro circa / notte)</h3>
+        </div>
+        <table class="months">
+          <thead>
+            <tr>
+              <th>Gen</th><th>Feb</th><th>Mar</th><th>Apr</th><th>Mag</th><th>Giu</th>
+              <th>Lug</th><th>Ago</th><th>Set</th><th>Ott</th><th>Nov</th><th>Dic</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="hi">380</td>
+              <td class="hi">395</td>
+              <td class="hi">310</td>
+              <td class="mid">230</td>
+              <td class="lo">210</td>
+              <td class="mid">220</td>
+              <td class="mid">265</td>
+              <td class="mid">265</td>
+              <td class="lo">210</td>
+              <td class="lo">210</td>
+              <td class="lo">215</td>
+              <td class="hi">370</td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="months-note">Fonte: media listing Airbnb St. Moritz. Il nostro target (apt curato 2 camere): in alta 450-700 euro/notte, non la media generica. Verde = alta, giallo = media, grigio = bassa.</p>
+
+        <div class="legal">
+          <div class="legal-top">
+            <h3>Come funziona legalmente</h3>
+            <div class="complexity medium">Complessita: MEDIA / ALTA</div>
+          </div>
+          <p>Modello master lease: la societa prende in affitto lungo termine e subaffitta ai turisti. Serve consenso scritto del proprietario al subaffitto turistico (senza quello non si parte).</p>
+          <p>Obblighi tipici: Registro ospiti, Kur-/Gastetaxe comunale (a St. Moritz circa 2,90 CHF a persona a notte in parahotellerie), dichiarazione reddito / IVA se soglia superata.</p>
+          <p>Non e vietato come a Nice. Ma non e banale: contratto CH, regole condominio, possibile uso commerciale se gestito come hotel. Prima di firmare: avvocato locale Engadina (1 consulto).</p>
+          <p>Acquisto di second home: ancora piu complesso (iniziativa seconde case). Per questo proponiamo lease, non compra.</p>
+        </div>
+
+        <div class="next-step">
+          <div class="label">Prossimo passo</div>
+          <p>Se scegli questo livello, entro 14 giorni porto 2-3 candidati concreti con canone, foto e break-even. Tu firmi il lease. Io imposto listing e vendite da remoto.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECT 2 -->
+    <section class="project" id="lapponia">
+      <div class="project-hero">
+        <img src="assets/progetto-lapponia.png" alt="Villaggio Lapponia dieci casette e spa" />
+        <div class="project-intro">
+          <div class="tag">Progetto 2 · La piu intelligente sul costo</div>
+          <h2>Lapponia Villaggio</h2>
+          <p class="where">Dove: terreno hinterland vicino Levi o Rovaniemi. Dieci casette piccole importate a kit, lucine di Natale, al centro mini-spa con piscina tonda sotto cupola e sauna accanto.</p>
+          <p class="why">Perche: e l opzione piu economica per unita (kit da Baltikum/Finlandia in poche settimane), non per comprare hotel. Con 10 unita il totale sale: per questo si parte in fase 1 con 4 casette + spa, poi si arriva a 10 con i ricavi.</p>
+        </div>
+      </div>
+
+      <div class="numbers">
+        <div>
+          <div class="label">Fase 1 (parti cosi)</div>
+          <div class="value">120-170k euro</div>
+          <div class="hint">terreno + 4 casette + spa</div>
+        </div>
+        <div>
+          <div class="label">Visione 10 casette</div>
+          <div class="value">280-400k euro</div>
+          <div class="hint">totale a regime (stimato)</div>
+        </div>
+        <div>
+          <div class="label">Prezzo notte</div>
+          <div class="value">300-500 euro</div>
+          <div class="hint">dicembre per casetta</div>
+        </div>
+        <div>
+          <div class="label">Kit / montaggio</div>
+          <div class="value">6-12 settimane</div>
+          <div class="hint">produzione + consegna EU</div>
+        </div>
+      </div>
+
+      <div class="project-body">
+        <div class="vision-box">
+          <div>
+            <h3>Visione finale (quella che racconti)</h3>
+            <p>10 casette A-frame piccole intorno a un cerchio.</p>
+            <p>Lucine di Natale su ogni unita e sui sentieri.</p>
+            <p>Al centro: piscina tonda riscaldata sotto cupola chiusa.</p>
+            <p>Appena dopo: sauna finlandese pronta all uso.</p>
+          </div>
+          <div>
+            <h3>Come resta economica</h3>
+            <p>Non compriamo hotel. Compra kit piccoli da siti UE e li monti sul posto.</p>
+            <p>Fase 1: 4 casette + spa gia con atmosfera Natale.</p>
+            <p>Fase 2: altre 6 casette quando dicembre ha dimostrato i numeri.</p>
+            <p>Costo per unita basso. Capitale totale controllato.</p>
+          </div>
+        </div>
+
+        <div class="field">
+          <h3>Mercato</h3>
+          <ul>
+            <li>Famiglie e coppie su Natale, aurora, esperienza villaggio</li>
+            <li>Competitor glass igloo a 300-495 euro a notte a dicembre</li>
+            <li>Prenotazioni mesi prima: perfetto per vendite da remoto</li>
+          </ul>
+        </div>
+        <div class="field">
+          <h3>Fatturato stimato</h3>
+          <ul>
+            <li>Fase 1 (4 casette), 1 dic-6 gen: circa 35-55k euro grezzi</li>
+            <li>A regime (10 casette), stesso periodo: circa 90-140k euro grezzi</li>
+            <li>Gennaio-marzo e autunno aurora: seconda onda di cassa</li>
+          </ul>
+        </div>
+        <div class="field">
+          <h3>Costi Fase 1 (per dire OK)</h3>
+          <ul>
+            <li>Terreno hinterland: 20-50k euro (non vicino agli skilift a 300k)</li>
+            <li>4 kit casette + spedizione + bagno/riscaldamento soft: 70-100k</li>
+            <li>Spa centrale: cupola + piscina tonda + sauna: 25-45k</li>
+            <li>Fondazioni leggere, allacci, lucine, sentieri: 15-25k</li>
+          </ul>
+        </div>
+        <div class="field">
+          <h3>Costi per arrivare a 10</h3>
+          <ul>
+            <li>Altre 6 casette finite: circa 100-160k euro in piu</li>
+            <li>Si pagano dopo il primo dicembre, non tutte il giorno 1</li>
+            <li>Layout gia pensato a cerchio: spa al centro fin da subito</li>
+          </ul>
+        </div>
+
+        <div class="field wide">
+          <h3>Dove trovarle davvero (siti concreti)</h3>
+        </div>
+        <div class="suppliers">
+          <div class="supplier">
+            <div class="who">Avrame (Estonia)</div>
+            <div class="what">Kit A-frame piccoli, fabbrica Baltikum, spedizione UE</div>
+            <div class="price">da circa 21.300 euro a kit · produzione 8-12 settimane</div>
+            <a href="https://avrame.com/" target="_blank">avrame.com</a>
+          </div>
+          <div class="supplier">
+            <div class="who">WoodenMe (Lituania)</div>
+            <div class="what">A-frame Midi 32 mq, kit legno pronto, logistica Europa</div>
+            <div class="price">circa 18.570 euro a kit (EXW Lituania)</div>
+            <a href="https://woodenme.com/product/a-frame-midi-32-m2/" target="_blank">woodenme.com</a>
+          </div>
+          <div class="supplier">
+            <div class="who">Viking Dome (Lituania)</div>
+            <div class="what">Cupola per piscina / spa chiusa, kit prefabbricato</div>
+            <div class="price">cupola pool circa 8-17k euro · consegna camion 3-6 settimane</div>
+            <a href="https://vikingdome.com/collections/sauna-spa-pool-dome" target="_blank">vikingdome.com</a>
+          </div>
+          <div class="supplier">
+            <div class="who">Ehta (Finlandia)</div>
+            <div class="what">Sauna / casetta pronta, arriva col camion e si posa con gru</div>
+            <div class="price">sauna da circa 12.900 euro · modello 13 da circa 19.300</div>
+            <a href="https://www.ehta.fi/en/" target="_blank">ehta.fi</a>
+          </div>
+        </div>
+
+        <div class="field wide">
+          <h3>Terreno e layout</h3>
+          <ul>
+            <li>Terreni: Habita, Etuovi, Oikotie — cercare hinterland, non Levi West da 310k</li>
+            <li>Layout: 10 piazzole a cerchio, spa al centro, accesso neve + parcheggio esterno</li>
+            <li>Permessi: unita piccole aiutano, ma piscina e villaggio turistico vanno verificati in comune</li>
+          </ul>
+        </div>
+
+        <div class="ops-grid">
+          <div class="ops-card">
+            <h3>Alta stagione e full booked</h3>
+            <ul>
+              <li>Alta vera: circa 3-4 mesi (dicembre-marzo). Dicembre e il re.</li>
+              <li>Seconda onda: settembre-novembre (aurora) e un po gennaio-febbraio dopo Natale.</li>
+              <li>Full booked facile: 15 dic - 6 gen (Natale/Capodanno). Spesso sold out mesi prima.</li>
+              <li>Ancora forte: gennaio-febbraio (aurora + famiglie). Occupazione mercato spesso 55-65% in inverno.</li>
+              <li>Difficile: maggio-agosto (estate fredda, prezzi bassi). Non e destinazione estate like Costa.</li>
+              <li>Con 4-10 casette design + spa: in picco Natale full booked e molto realistico se vendi da settembre.</li>
+            </ul>
+          </div>
+          <div class="ops-card">
+            <h3>Eventi speciali (influenzano i prezzi)</h3>
+            <ul>
+              <li>Natale / Capodanno (15 dic - 6 gen): prezzi hotel +50/100%. Glass igloo 500-900 euro.</li>
+              <li>Santa Claus Village attivo tutto l anno, ma dicembre = caos turistico.</li>
+              <li>Polar Night + aurora (nov-mar): motore domanda Asia/Europa.</li>
+              <li>Non ci sono 10 festival tipo Cannes: il prodotto e l esperienza (Natale, aurora, neve).</li>
+              <li>Estate midnight sun: domanda diversa e piu bassa sui prezzi notte.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="field wide">
+          <h3>Stima prezzi medi mercato Airbnb Rovaniemi (euro circa / notte)</h3>
+        </div>
+        <table class="months">
+          <thead>
+            <tr>
+              <th>Gen</th><th>Feb</th><th>Mar</th><th>Apr</th><th>Mag</th><th>Giu</th>
+              <th>Lug</th><th>Ago</th><th>Set</th><th>Ott</th><th>Nov</th><th>Dic</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="hi">240</td>
+              <td class="hi">210</td>
+              <td class="mid">165</td>
+              <td class="lo">130</td>
+              <td class="lo">120</td>
+              <td class="lo">115</td>
+              <td class="lo">110</td>
+              <td class="lo">110</td>
+              <td class="lo">120</td>
+              <td class="lo">120</td>
+              <td class="mid">175</td>
+              <td class="hi">370</td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="months-note">Fonte: media listing Airbnb Rovaniemi. Il nostro target (casetta design + accesso spa): 300-500 euro in dic-gen, 220-350 in gen-mar. Dicembre medio mercato gia a circa 370 euro.</p>
+
+        <div class="legal">
+          <div class="legal-top">
+            <h3>Come funziona legalmente</h3>
+            <div class="complexity medium">Complessita: MEDIA</div>
+          </div>
+          <p>Serve societa finlandese o branch (Y-tunnus / business ID), IVA sopra soglia, e se attivita professionale di alloggio: notifica sanitaria comunale + registro ospiti (legge accommodation).</p>
+          <p>Edilizia: casette abitabili di solito richiedono permesso di costruire. L esenzione sotto 30 mq riguarda certi edifici non residenziali: non dare per scontato zero permesso. Piscina + cupola + 10 unita = progetto da verificare col comune (zoning).</p>
+          <p>Terreno: comprare lotto edificabile corretto (non agricolo senza diritti). Allacci acqua/elettricita obbligatori.</p>
+          <p>Non e impossibile: tanti villaggi glamping lo fanno. Ma non e un Airbnb improvvisato. Serve tecnico locale + comune prima di ordinare 10 kit.</p>
+        </div>
+
+        <div class="next-step">
+          <div class="label">Prossimo passo</div>
+          <p>Se ti convince questa visione: entro 14 giorni porto 1 terreno candidato + preventivi scritti Avrame o WoodenMe (4 unita) + Viking Dome + Ehta sauna. Tu vedi il pacchetto Fase 1. Se i numeri reggono, ordiniamo i kit e io parto sulle pre-vendite Natale.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECT 3 -->
+    <section class="project" id="costa">
+      <div class="project-hero">
+        <img src="assets/progetto-costa-azzurra.png" alt="Villa Costa Azzurra" />
+        <div class="project-intro">
+          <div class="tag">Progetto 3 · Premium stagionale</div>
+          <h2>Costa Azzurra</h2>
+          <p class="where">Dove: Cannes, Nizza o Villefranche (hinterland). Due o tre appartamenti, oppure una villa soft-frazionata.</p>
+          <p class="why">Perche: non sistema dicembre, ma bilancia estate ed eventi. Festival di Cannes e GP Monaco creano picchi di cassa molto forti.</p>
+        </div>
+      </div>
+
+      <div class="numbers">
+        <div>
+          <div class="label">Capitale iniziale</div>
+          <div class="value">80-180k euro</div>
+          <div class="hint">depositi, canoni, restyling</div>
+        </div>
+        <div>
+          <div class="label">Prezzo notte</div>
+          <div class="value">200-1500 euro</div>
+          <div class="hint">estate / festival</div>
+        </div>
+        <div>
+          <div class="label">Ricavo festival</div>
+          <div class="value">20-40k euro</div>
+          <div class="hint">12 giorni, 2 apt</div>
+        </div>
+        <div>
+          <div class="label">Tempo</div>
+          <div class="value">6-12 settimane</div>
+          <div class="hint">ideale prima di maggio</div>
+        </div>
+      </div>
+
+      <div class="project-body">
+        <div class="field">
+          <h3>Mercato</h3>
+          <ul>
+            <li>Professionisti cinema, corporate, turismo luxury</li>
+            <li>Durante il Festival la citta triplica, domanda apt fortissima</li>
+            <li>Villefranche: crocieristi e overflow da Nizza e Monaco</li>
+          </ul>
+        </div>
+        <div class="field">
+          <h3>Prezzi di riferimento</h3>
+          <ul>
+            <li>Affitto lungo arredato: spesso 900-3.500 euro al mese</li>
+            <li>Estate Villefranche: spesso 200-350 euro a notte</li>
+            <li>Festival T2 centro: spesso 600-1.500 euro a notte</li>
+          </ul>
+        </div>
+        <div class="field">
+          <h3>Costi da coprire</h3>
+          <ul>
+            <li>Iniziali: caparre, 3-6 mesi di canone, restyling, compliance short-term</li>
+            <li>Canone indicativo: 2-7k euro al mese per 2 apt o 1 villa piccola</li>
+            <li>Estate aggiuntiva stimata: altri 25-40k euro grezzi su 90 giorni</li>
+          </ul>
+        </div>
+        <div class="field">
+          <h3>Dove cercare (costi piu bassi)</h3>
+          <ul>
+            <li>Live on Riviera, Riviera Experience, agenzie locali Nizza e Cannes</li>
+            <li>Evitare subito la Croisette: Le Suquet, Antibes, hinterland</li>
+            <li>Occasione: proprietario con apt che vuole solo revenue e vendite</li>
+          </ul>
+        </div>
+
+        <div class="ops-grid">
+          <div class="ops-card">
+            <h3>Alta stagione e full booked</h3>
+            <ul>
+              <li>Alta estate: luglio-agosto (2 mesi). Occupazione forte ma non sempre 100%.</li>
+              <li>Alta eventi: maggio-giugno (Festival, GP Monaco, Lions) = settimane quasi sold out se sei vicino agli eventi.</li>
+              <li>Full booked facile: 10-12 giorni Festival Cannes, weekend GP Monaco, Cannes Lions.</li>
+              <li>Buona: giugno-settembre. Media annua mercato Cannes spesso 45-55% (non e un full year).</li>
+              <li>Difficile: gennaio, novembre, inizio dicembre (bassa vera).</li>
+              <li>Qui non punti al full booked 12 mesi: punti a picchi evento + estate che pagano l anno.</li>
+            </ul>
+          </div>
+          <div class="ops-card">
+            <h3>Eventi speciali (quanti e quando)</h3>
+            <ul>
+              <li>MIPIM (marzo, Cannes): + prezzi corporate 4-5 giorni</li>
+              <li>Festival di Cannes (maggio, circa 12 giorni): tariffe x4/x8 vs maggio normale. Un T2 puo fare 12-22k in 12 giorni</li>
+              <li>GP Monaco (fine mag / inizio giu): spike su tutta la Riviera</li>
+              <li>Cannes Lions (giugno): altro picco creativi/agenzie</li>
+              <li>Altri congressi Palais (MAPIC, TFWA...): 40-50+ eventi/anno a Cannes</li>
+              <li>Carnaval di Nizza (feb): supporto zona Nizza</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="field wide">
+          <h3>Stima prezzi medi mercato Airbnb Cannes (euro circa / notte)</h3>
+        </div>
+        <table class="months">
+          <thead>
+            <tr>
+              <th>Gen</th><th>Feb</th><th>Mar</th><th>Apr</th><th>Mag</th><th>Giu</th>
+              <th>Lug</th><th>Ago</th><th>Set</th><th>Ott</th><th>Nov</th><th>Dic</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="lo">115</td>
+              <td class="lo">115</td>
+              <td class="mid">170</td>
+              <td class="lo">120</td>
+              <td class="hi">200</td>
+              <td class="hi">215</td>
+              <td class="mid">155</td>
+              <td class="mid">165</td>
+              <td class="mid">145</td>
+              <td class="lo">130</td>
+              <td class="lo">115</td>
+              <td class="lo">125</td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="months-note">Fonte: media listing Airbnb Cannes (include anche listing base). Il nostro target apt curato: estate 250-400, Festival 600-1500, settimane evento possono valere piu di un mese normale.</p>
+
+        <div class="legal">
+          <div class="legal-top">
+            <h3>Come funziona legalmente</h3>
+            <div class="complexity medium">Complessita: MEDIA a Cannes · ALTA a Nizza</div>
+          </div>
+          <p>Obbligo ovunque: registrazione meuble de tourisme in Comune e numero 13 cifre su ogni annuncio + taxe de sejour.</p>
+          <p>Cannes: oggi non applica un tetto giorni aggressivo come Parigi/Nizza (scelta politica locale). Piu amichevole per un operatore eventi. Serve comunque rispetto regolamento e niente abusi (es. keybox illegali).</p>
+          <p>Nizza: molto piu duro. Residenza principale max 90 giorni/anno. Seconde case: cambio d uso con quote limitate e finestre di deposito. Per noi: meglio Cannes / Antibes / hinterland, non centro Nizza.</p>
+          <p>Lease + sublocazione: serve contratto che autorizzi la destinazione turistica. Avvocato FR consigliato prima di investire su restyling.</p>
+        </div>
+
+        <div class="next-step">
+          <div class="label">Prossimo passo</div>
+          <p>Autorizzi una shortlist di 2 appartamenti (o 1 villa) con conto economico Festival piu estate. Se i numeri reggono il canone annuale, firmiamo e parto subito con le pre-vendite per maggio.</p>
+        </div>
+      </div>
+    </section>
+
+    <footer class="closing">
+      <h2>Cosa chiedo oggi</h2>
+      <ol>
+        <li>Scegli un livello, oppure due in parallelo (per esempio Lapponia Fase 1 piu Saint-Moritz lease).</li>
+        <li>Dammi un tetto soft di budget. Non i conti aperti: solo fino a quanto possiamo arrivare in questa fase.</li>
+        <li>Definiamo insieme come strutturare il lavoro da remoto.</li>
+        <li>Entro 14 giorni ti porto 2-3 opportunita reali con link, canoni e break-even.</li>
+      </ol>
+      <p class="sources">
+        Range basati su dati pubblici: Airbnb seasonality (St. Moritz, Rovaniemi, Cannes),
+        Avrame / WoodenMe / Viking Dome / Ehta, RoamRecs Engadin events, Rovaniemi Tours peak December,
+        Métropole Nice / Mairie Cannes (meuble tourisme), Magrey Festival.
+        Le foto sono moodboard generate. I numeri sono stime di lavoro, non un preventivo chiuso.
+        Legale: sintesi operativa, non parere legale formale.
+      </p>
+    </footer>
+  </div>
+</body>
+</html>

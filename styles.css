@@ -16663,3 +16663,429 @@ body.home-page .emily-card__meta > div {
   padding: 0 !important;
   margin: 0 !important;
 }
+
+/* =========================================================
+   HOME DNA EVERYWHERE — same type + containers as perfect home
+   ========================================================= */
+body.listing-page,
+body.stats-page {
+  background: #ffffff !important;
+  color: #1d1d1f !important;
+  font-size: 17px !important;
+  line-height: 1.47 !important;
+  letter-spacing: -0.011em !important;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display",
+    "Segoe UI", Helvetica, Arial, sans-serif !important;
+}
+
+.listing-page .bento--listing,
+.listing-page .page-real,
+.listing-page .listing-shell,
+.listing-page .listing-layout,
+.listing-page .listing-main,
+.stats-page .bento,
+.stats-page .page-real {
+  background: #ffffff !important;
+}
+
+/* Shared card shell = emily-card */
+.listing-page .listing-main > .sec,
+.listing-page .listing-main > .air-more,
+.listing-page .listing-main > details.portal-fold,
+.listing-page .money__cell,
+.listing-page .place-stats,
+.listing-page .place-stat,
+.listing-page .listing-rail__card,
+.listing-page .rail-switch__card,
+.listing-page .scen-card,
+.listing-page .call-lead,
+.listing-page .yr-table-wrap,
+.stats-page .stats-slide,
+.stats-page .stats-card,
+.stats-page .stats-compare__card {
+  background: #fff !important;
+  border: 1px solid rgba(0, 0, 0, 0.06) !important;
+  border-radius: 0.85rem !important;
+  box-shadow: 0 0.15rem 0.85rem rgba(0, 0, 0, 0.045) !important;
+}
+
+.listing-page .listing-main > .sec,
+.listing-page .listing-main > .air-more,
+.listing-page .listing-main > details.portal-fold {
+  padding: 1.15rem 1.2rem 1.25rem !important;
+  margin: 0 0 1.15rem !important;
+  border-top: 1px solid rgba(0, 0, 0, 0.06) !important;
+}
+
+.listing-page .listing-hero,
+.listing-page .listing-main > .listing-hero {
+  background: #fff !important;
+  border: 1px solid rgba(0, 0, 0, 0.06) !important;
+  border-radius: 0.85rem !important;
+  box-shadow: 0 0.15rem 0.85rem rgba(0, 0, 0, 0.045) !important;
+  padding: 1.15rem 1.2rem 1.25rem !important;
+  margin: 0 0 1.15rem !important;
+}
+
+/* Titles like home h2 — light, not heavy */
+.listing-page .sec-title,
+.listing-page .air-more .sec-title,
+.listing-page .listing-title h1,
+.listing-page .listing-hero h1,
+.listing-page .money-block__head h3,
+.listing-page .place-stats__title,
+.stats-page h1,
+.stats-page h2 {
+  font-size: clamp(1.05rem, 1.55vw, 1.35rem) !important;
+  font-weight: 300 !important;
+  letter-spacing: -0.025em !important;
+  line-height: 1.2 !important;
+  color: #1d1d1f !important;
+}
+
+.listing-page .listing-title h1,
+.listing-page .listing-hero h1 {
+  font-size: clamp(1.35rem, 2.4vw, 1.85rem) !important;
+  font-weight: 300 !important;
+  letter-spacing: -0.035em !important;
+}
+
+/* Body copy = home __sub tone, readable */
+.listing-page .manual,
+.listing-page .snap-list li,
+.listing-page .place-acts li,
+.listing-page .place-acts li span,
+.listing-page .money-block__note,
+.listing-page .yr-table__foot,
+.listing-page .call-lead__meta p,
+.listing-page .call-lead__tip,
+.stats-page p,
+.stats-page .stats-lead {
+  font-size: clamp(0.78rem, 1.05vw, 0.88rem) !important;
+  line-height: 1.45 !important;
+  font-weight: 400 !important;
+  color: #3a3a3c !important;
+}
+
+.listing-page .snap-list li {
+  color: #1d1d1f !important;
+  font-size: clamp(0.84rem, 1.1vw, 0.92rem) !important;
+  border-bottom: 1px solid #efefef !important;
+  padding: 0.55em 0 0.55em 1.5rem !important;
+}
+
+/* Labels like home dt */
+.listing-page .listing-title__loc,
+.listing-page .money__hint,
+.listing-page .money__meta,
+.listing-page .air-more__hint,
+.listing-page .money-block__eyebrow,
+.listing-page .place-stat span,
+.listing-page .booking-card__period,
+.listing-page .booking-card__facts li span,
+.listing-page .listing-rail__label,
+.listing-page .rail-switch__desc,
+.listing-page .rail-switch__tag {
+  font-size: clamp(0.68rem, 0.92vw, 0.74rem) !important;
+  color: #86868b !important;
+  font-weight: 400 !important;
+  line-height: 1.35 !important;
+}
+
+.listing-page .place-stat span {
+  color: #6e6e73 !important;
+  font-size: clamp(0.72rem, 0.95vw, 0.82rem) !important;
+}
+
+/* Values like home dd */
+.listing-page .ledger li span,
+.listing-page .ledger li b,
+.listing-page .booking-card__facts li b,
+.listing-page .rail-switch__body strong,
+.listing-page .place-stat b,
+.listing-page .money__meta b {
+  font-size: clamp(0.84rem, 1.15vw, 0.95rem) !important;
+  color: #1d1d1f !important;
+  font-weight: 500 !important;
+  line-height: 1.35 !important;
+}
+
+.listing-page .ledger li {
+  border-bottom: 1px solid #efefef !important;
+  padding: 0.55em 0 !important;
+  font-size: clamp(0.84rem, 1.1vw, 0.92rem) !important;
+}
+
+.listing-page .ledger li.is-net,
+.listing-page .ledger li.is-net.is-key,
+.listing-page .ledger li.is-total {
+  background: transparent !important;
+  border: 0 !important;
+  border-bottom: 1px solid #efefef !important;
+  border-radius: 0 !important;
+  padding: 0.65em 0 !important;
+  margin: 0 !important;
+  box-shadow: none !important;
+}
+
+.listing-page .ledger li.is-net b,
+.listing-page .ledger li.is-total b {
+  font-weight: 600 !important;
+  color: #1d1d1f !important;
+}
+
+/* Money hero — home card density */
+.listing-page .money {
+  gap: 0.75rem !important;
+}
+
+.listing-page .money__cell,
+.listing-page .money__cell.is-key,
+.listing-page .money__cell--in,
+.listing-page .money__cell--out {
+  background: #fff !important;
+  background-image: none !important;
+  border: 1px solid rgba(0, 0, 0, 0.06) !important;
+  border-radius: 0.85rem !important;
+  box-shadow: 0 0.15rem 0.85rem rgba(0, 0, 0, 0.045) !important;
+  padding: 1rem 1.05rem !important;
+}
+
+.listing-page .money__cell span {
+  font-size: clamp(0.68rem, 0.92vw, 0.74rem) !important;
+  color: #86868b !important;
+  font-weight: 400 !important;
+  text-transform: none !important;
+  letter-spacing: 0 !important;
+}
+
+.listing-page .money__cell strong,
+.listing-page .money__cell.is-key strong {
+  font-size: clamp(1.05rem, 1.55vw, 1.35rem) !important;
+  font-weight: 500 !important;
+  letter-spacing: -0.025em !important;
+  color: #1d1d1f !important;
+  line-height: 1.2 !important;
+}
+
+.listing-page .place-stats {
+  padding: 1rem 1.05rem 1.15rem !important;
+}
+
+.listing-page .place-stats__grid {
+  gap: 0.7rem !important;
+}
+
+.listing-page .place-stat,
+.listing-page .place-stat.is-key {
+  background: #fff !important;
+  border: 1px solid rgba(0, 0, 0, 0.06) !important;
+  border-radius: 0.85rem !important;
+  box-shadow: none !important;
+  padding: 0.85rem 0.9rem !important;
+}
+
+.listing-page .place-stat b,
+.listing-page .place-stat.is-key b {
+  font-size: clamp(0.95rem, 1.3vw, 1.15rem) !important;
+  font-weight: 500 !important;
+  color: #1d1d1f !important;
+}
+
+/* place-acts rows like home meta */
+.listing-page .place-acts {
+  border: 1px solid rgba(0, 0, 0, 0.06) !important;
+  border-radius: 0.85rem !important;
+  background: #fff !important;
+  box-shadow: 0 0.15rem 0.85rem rgba(0, 0, 0, 0.045) !important;
+  padding: 0.35rem 1.05rem !important;
+  overflow: hidden !important;
+}
+
+.listing-page .place-acts li {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: baseline !important;
+  justify-content: space-between !important;
+  gap: 0.75rem !important;
+  border-bottom: 1px solid #efefef !important;
+  padding: 0.7em 0 !important;
+}
+
+.listing-page .place-acts li:last-child {
+  border-bottom: 0 !important;
+}
+
+.listing-page .place-acts li strong {
+  font-size: clamp(0.84rem, 1.15vw, 0.95rem) !important;
+  font-weight: 500 !important;
+  color: #1d1d1f !important;
+}
+
+.listing-page .place-acts li span {
+  font-size: clamp(0.68rem, 0.92vw, 0.74rem) !important;
+  color: #86868b !important;
+  text-align: right !important;
+}
+
+/* Air more button = home CTA blue underline feel */
+.listing-page .air-more__btn {
+  font-size: 0.75rem !important;
+  font-weight: 500 !important;
+  color: #0071e3 !important;
+  text-decoration: none !important;
+  min-height: auto !important;
+  padding: 0.85em 0 0 !important;
+  margin-top: 0.75rem !important;
+  border-top: 1px solid #ebebeb !important;
+  width: 100% !important;
+  justify-content: flex-start !important;
+}
+
+.listing-page .air-more__btn:hover {
+  color: #0077ed !important;
+}
+
+.listing-page .air-more__btn::after {
+  border-color: currentColor !important;
+}
+
+.listing-page .air-more__clip {
+  max-height: 10.5rem !important;
+}
+
+.listing-page .air-more__fade {
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.55) 35%,
+    rgba(255, 255, 255, 0.92) 70%,
+    #fff 100%
+  ) !important;
+}
+
+/* CTAs like apple-stats-btn */
+.listing-page .portal-cta,
+.listing-page .portal-cta--bar {
+  background: #0071e3 !important;
+  color: #fff !important;
+  border: 0 !important;
+  border-radius: 980px !important;
+  font-size: 0.8125rem !important;
+  font-weight: 400 !important;
+  letter-spacing: -0.01em !important;
+  min-height: 2.35rem !important;
+  height: auto !important;
+  padding: 0.55rem 1.15rem !important;
+  box-shadow: none !important;
+}
+
+.listing-page .portal-cta:hover,
+.listing-page .portal-cta--bar:hover {
+  background: #0077ed !important;
+}
+
+.listing-page .booking-card__amount {
+  font-size: clamp(1.05rem, 1.55vw, 1.35rem) !important;
+  font-weight: 500 !important;
+  letter-spacing: -0.025em !important;
+  color: #1d1d1f !important;
+}
+
+.listing-page .listing-rail__toc a {
+  font-size: clamp(0.84rem, 1.1vw, 0.92rem) !important;
+  color: #1d1d1f !important;
+  font-weight: 400 !important;
+  border-bottom: 1px solid #efefef !important;
+  padding: 0.55em 0 !important;
+}
+
+.listing-page .yr-table {
+  font-size: clamp(0.78rem, 1.05vw, 0.88rem) !important;
+  color: #1d1d1f !important;
+}
+
+.listing-page .yr-table th,
+.listing-page .yr-table td {
+  padding: 0.5em 0.55em !important;
+  border-bottom: 1px solid #efefef !important;
+  color: #1d1d1f !important;
+  font-weight: 400 !important;
+}
+
+.listing-page .yr-table th {
+  font-weight: 500 !important;
+  color: #86868b !important;
+  font-size: 0.72rem !important;
+}
+
+.listing-page .booking-bar {
+  background: #fff !important;
+  border-top: 1px solid rgba(0, 0, 0, 0.06) !important;
+  box-shadow: 0 -0.15rem 0.85rem rgba(0, 0, 0, 0.04) !important;
+}
+
+.listing-page .booking-bar__left strong {
+  font-size: 0.95rem !important;
+  font-weight: 500 !important;
+  color: #1d1d1f !important;
+}
+
+.listing-page .booking-bar__left span {
+  font-size: 0.72rem !important;
+  color: #86868b !important;
+}
+
+.listing-page .call-lead__who strong {
+  font-size: clamp(0.84rem, 1.15vw, 0.95rem) !important;
+  font-weight: 500 !important;
+  color: #1d1d1f !important;
+}
+
+.listing-page .call-lead__script-body {
+  font-size: clamp(0.78rem, 1.05vw, 0.88rem) !important;
+  line-height: 1.45 !important;
+  color: #3a3a3c !important;
+}
+
+/* Stats page */
+.stats-page {
+  background: #fff !important;
+}
+
+.stats-page .stats-lead,
+.stats-page p {
+  color: #3a3a3c !important;
+}
+
+@media (max-width: 734px) {
+  .listing-page .sec-title,
+  .listing-page .air-more .sec-title,
+  .listing-page .money-block__head h3,
+  .listing-page .place-stats__title {
+    font-size: 1.2rem !important;
+    font-weight: 500 !important;
+  }
+
+  .listing-page .listing-title h1,
+  .listing-page .listing-hero h1 {
+    font-size: 1.55rem !important;
+    font-weight: 500 !important;
+  }
+
+  .listing-page .manual,
+  .listing-page .snap-list li {
+    font-size: 0.85rem !important;
+    color: #3a3a3c !important;
+  }
+
+  .listing-page .snap-list li {
+    color: #1d1d1f !important;
+  }
+
+  .listing-page .listing-main > .sec,
+  .listing-page .listing-main > .air-more,
+  .listing-page .listing-hero {
+    padding: 1rem 1.05rem 1.15rem !important;
+  }
+}

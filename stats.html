@@ -3,25 +3,23 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=0.75, viewport-fit=cover" />
-  <meta name="theme-color" content="#f5f5f7" />
+  <meta name="theme-color" content="#ffffff" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <title>Perché queste tre · Proposte</title>
-  <link rel="stylesheet" href="styles.css?v=20260926apple" />
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
-  <link rel="stylesheet" href="skeleton.css?v=20260926apple" />
+  <link rel="stylesheet" href="styles.css?v=20260926ago" />
+  <link rel="stylesheet" href="skeleton.css?v=20260926ago" />
 </head>
 <body class="is-skel stats-page">
 
-  <header class="apex-header">
+    <header class="apex-header">
     <div class="apex-bar">
       <div class="apex-bar__inner">
         <a class="apex-bar__logo" href="index.html"><span class="apex-bar__name">Proposte</span></a>
-        <nav class="apex-bar__nav" aria-label="Navigazione">
-          <a class="apex-bar__link" href="index.html">Home</a>
+        <nav class="apex-bar__nav" aria-label="Progetti">
           <a class="apex-bar__link" href="saint-moritz.html">Saint-Moritz</a>
           <a class="apex-bar__link" href="lapponia.html">Rovaniemi</a>
           <a class="apex-bar__link" href="costa-azzurra.html">Costa Azzurra</a>
-          <a class="apex-bar__pill" href="index.html">Torna</a>
+          <a class="apex-bar__pill" href="index.html">Home</a>
         </nav>
       </div>
     </div>
@@ -32,106 +30,72 @@
     <p class="skel-status" role="status" aria-live="polite">Caricamento…</p>
     <div class="page-real" aria-hidden="true">
 
-      <div class="stats-flow" id="stats-deck">
-        <button type="button" class="stats-nav stats-nav--prev" aria-label="Indietro"><span>&lt;</span></button>
-        <button type="button" class="stats-nav stats-nav--next" aria-label="Avanti"><span>&gt;</span></button>
-
+      <div class="stats-flow stats-flow--plain" id="stats-deck">
         <div class="stats-deck__stage" aria-live="polite">
 
           <article class="stats-slide is-active" data-i="0">
-            <p class="stats-step">1 di 5</p>
-            <h1 class="stats-title">Ci sono tanti posti turistici.</h1>
+            <p class="stats-step">1 di 4</p>
+            <h1 class="stats-title">Non basta che ci sia turismo.</h1>
             <p class="stats-lead">
-              Barcellona, Amsterdam, Parigi, Londra… ovunque c’è gente che cerca una casa per pochi giorni.
-              La domanda giusta non è «dove c’è turismo», ma: <strong>dove conviene entrare a voi</strong>,
-              rispetto a quello che avete già.
+              In Europa i turisti ci sono quasi ovunque. La domanda utile è un’altra:
+              <strong>dove conviene entrare a voi</strong>, rispetto a quello che avete già.
             </p>
-            <div class="real-map real-map--hero" id="map-world" data-map="world" aria-label="Mappa Europa"></div>
-            <ul class="stats-legend" aria-label="Legenda">
-              <li><i class="dot dot--blue"></i> Destinazioni molto richieste</li>
-              <li><i class="dot dot--green"></i> Quello che avete già (es. Venezia)</li>
-              <li><i class="dot dot--dark"></i> Le tre proposte di cui parliamo</li>
-            </ul>
           </article>
 
           <article class="stats-slide" data-i="1">
-            <p class="stats-step">2 di 5</p>
+            <p class="stats-step">2 di 4</p>
             <h1 class="stats-title">Perché non Barcellona o Amsterdam.</h1>
             <p class="stats-lead">
               Non perché manchino i turisti. Perché, per voi, non chiudono il buco giusto.
             </p>
-            <div class="real-map real-map--hero" id="map-discard" data-map="discard" aria-label="Mappa mercati scartati"></div>
             <ul class="stats-reasons">
               <li>
                 <strong>Barcellona</strong>
-                Domanda altissima, sì. Ma mercato già pieno, regole sugli affitti turistici sempre più strette,
-                e funziona soprattutto d’estate. Voi avete già l’estate con Venezia e Puglia.
+                Funziona soprattutto d’estate. Voi l’estate ce l’avete già. In più il mercato è pieno e le regole sono sempre più strette.
               </li>
               <li>
                 <strong>Amsterdam</strong>
-                Affitti brevi molto limitati, costi di ingresso alti, concorrenza matura.
-                Bella città: ingresso complicato e poco conveniente oggi.
+                Affittare a breve è difficile e costa entrare. Bella città, ma poco pratica per voi oggi.
               </li>
             </ul>
-            <p class="stats-note">In rosso: scartati. In verde: ciò che avete già.</p>
           </article>
 
           <article class="stats-slide" data-i="2">
-            <p class="stats-step">3 di 5</p>
-            <h1 class="stats-title">Il filtro è semplice.</h1>
+            <p class="stats-step">3 di 4</p>
+            <h1 class="stats-title">Cosa abbiamo cercato.</h1>
             <p class="stats-lead">
-              Abbiamo tenuto il radar su cinque aree: Spagna, Francia, Italia, Svizzera e Nord Europa.
-              In Italia l’estate è già coperta. Serve soprattutto un motore per l’inverno —
-              e, se ha senso, qualcosa di vostro che si possa anche rivendere.
+              In Italia l’estate è già coperta. Serve soprattutto qualcosa per l’inverno.
+              E, se ha senso, qualcosa di vostro che un giorno si possa anche rivendere.
             </p>
-            <div class="real-map real-map--hero" id="map-filter" data-map="filter" aria-label="Mappa cinque aree"></div>
             <ol class="stats-steps-list">
-              <li>Partire da ciò che avete già (estate in Italia).</li>
-              <li>Evitare mercati saturi o troppo vincolati.</li>
-              <li>Preferire posti dove i numeri e la stagione tornano.</li>
+              <li>Partire da quello che avete già.</li>
+              <li>Evitare posti troppo pieni o troppo complicati.</li>
+              <li>Scegliere posti dove stagione e soldi tornano.</li>
             </ol>
           </article>
 
           <article class="stats-slide" data-i="3">
-            <p class="stats-step">4 di 5</p>
+            <p class="stats-step">4 di 4</p>
             <h1 class="stats-title">Tre scelte chiare.</h1>
-            <p class="stats-lead">
-              Non sono tre «idee a caso». Sono tre modi diversi di entrare, con soldi e tempi diversi.
-            </p>
-            <div class="real-map real-map--hero" id="map-pick" data-map="pick" aria-label="Mappa tre proposte"></div>
             <div class="stats-compare" role="list">
               <a class="stats-compare__row" href="saint-moritz.html" role="listitem">
                 <span class="stats-compare__name">Saint-Moritz</span>
-                <span class="stats-compare__meta">Affitto · inverno · 40–70 mila € all’inizio</span>
-                <span class="stats-compare__why">Classico, noto, guadagno concentrato da dicembre a marzo.</span>
+                <span class="stats-compare__why">Affitto d’inverno. Si parte con meno soldi. Classico e chiaro.</span>
               </a>
               <a class="stats-compare__row" href="lapponia.html" role="listitem">
                 <span class="stats-compare__name">Rovaniemi</span>
-                <span class="stats-compare__meta">Acquisto · inverno · 105–125 mila € all’inizio</span>
-                <span class="stats-compare__why">Comprate terreno e casette: resta vostro e si può rivendere.</span>
+                <span class="stats-compare__why">Si compra. Resta vostro. Guadagno d’inverno, con l’aurora.</span>
               </a>
               <a class="stats-compare__row" href="costa-azzurra.html" role="listitem">
                 <span class="stats-compare__name">Costa Azzurra</span>
-                <span class="stats-compare__meta">Affitto · estate ed eventi · 55–115 mila € all’inizio</span>
-                <span class="stats-compare__why">Festival e congressi; non chiude il buco dell’inverno.</span>
+                <span class="stats-compare__why">Affitto estate ed eventi. Non chiude il buco dell’inverno: è un pezzo in più.</span>
               </a>
             </div>
-          </article>
-
-          <article class="stats-slide" data-i="4">
-            <p class="stats-step">5 di 5</p>
-            <h1 class="stats-title">A questo punto la scelta è vostra.</h1>
-            <p class="stats-lead">
-              Possiamo approfondire la Svizzera (inverno classico), la Finlandia (acquisto e aurora),
-              o tenere la Costa Azzurra come pezzo estivo e di eventi.
-              I numeri e i dettagli sono dentro ogni proposta.
-            </p>
             <nav class="stats-pick" aria-label="Apri una proposta">
               <a href="saint-moritz.html">Saint-Moritz</a>
               <a href="lapponia.html" class="is-dark">Rovaniemi</a>
               <a href="costa-azzurra.html">Costa Azzurra</a>
             </nav>
-            <p class="stats-note"><a href="index.html">Torna alle tre card</a></p>
           </article>
 
         </div>
@@ -141,17 +105,15 @@
           <button type="button" aria-label="Passaggio 2" data-go="1"></button>
           <button type="button" aria-label="Passaggio 3" data-go="2"></button>
           <button type="button" aria-label="Passaggio 4" data-go="3"></button>
-          <button type="button" aria-label="Passaggio 5" data-go="4"></button>
         </div>
       </div>
 
     </div>
   </main>
 
-  <script src="skeleton-markup.js?v=20260926apple" data-skel="stats"></script>
-  <script src="skeleton.js?v=20260926apple"></script>
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-  <script src="stats-deck.js?v=20260926apple"></script>
-  <script src="topbar.js?v=20260926apple"></script>
+  <script src="skeleton-markup.js?v=20260926ago" data-skel="stats"></script>
+  <script src="skeleton.js?v=20260926ago"></script>
+  <script src="stats-deck.js?v=20260926ago"></script>
+  <script src="topbar.js?v=20260926ago"></script>
 </body>
 </html>

@@ -16510,26 +16510,30 @@ body.stats-page {
 }
 
 /* =========================================================
-   CLOU: highlight the few numbers that decide
+   CLOU: highlight (MONOCHROME ONLY — no green / soft tints)
    ========================================================= */
 .listing-page .money__cell.is-key,
 .money__cell.is-key {
   position: relative !important;
   border: 1px solid rgba(28, 28, 30, 0.16) !important;
-  box-shadow: 0 1px 0 rgba(28, 28, 30, 0.04) !important;
+  box-shadow: none !important;
+  background: #fff !important;
 }
 
 .listing-page .money__cell--out.is-key,
-.money__cell--out.is-key {
-  background: linear-gradient(180deg, rgba(52, 199, 89, 0.10), rgba(52, 199, 89, 0.04)) !important;
-  border-color: rgba(52, 199, 89, 0.35) !important;
+.money__cell--out.is-key,
+.listing-page .money__cell--out,
+.money__cell--out {
+  background: #fff !important;
+  border-color: rgba(28, 28, 30, 0.16) !important;
 }
 
 .listing-page .money__cell.is-key strong,
-.money__cell.is-key strong {
-  font-size: clamp(1.55rem, 2.4vw, 2.05rem) !important;
-  font-weight: 700 !important;
-  letter-spacing: -0.03em !important;
+.money__cell.is-key strong,
+.listing-page .money__cell--out.is-key strong,
+.money__cell--out.is-key strong,
+.listing-page .money__cell strong,
+.money__cell strong {
   color: #1c1c1e !important;
 }
 
@@ -16537,17 +16541,17 @@ body.stats-page {
 .money__cell.is-key > span:first-child {
   font-weight: 600 !important;
   color: #3a3a3c !important;
-  letter-spacing: 0.01em !important;
 }
 
-.listing-page .money__cell--out.is-key strong,
-.money__cell--out.is-key strong {
-  color: #1b7a3a !important;
+.listing-page .money__cell.is-key strong,
+.money__cell.is-key strong {
+  font-size: clamp(1.55rem, 2.4vw, 2.05rem) !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.03em !important;
 }
 
-/* In breve / A regime key tiles */
 .listing-page .place-stat.is-key {
-  background: rgba(28, 28, 30, 0.045) !important;
+  background: rgba(28, 28, 30, 0.04) !important;
   border: 1px solid rgba(28, 28, 30, 0.12) !important;
   border-radius: 12px !important;
   padding: 14px 14px 12px !important;
@@ -16564,30 +16568,31 @@ body.stats-page {
   font-weight: 650 !important;
 }
 
-/* Ledger: net line is the punchline */
 .listing-page .ledger li.is-net.is-key,
 .listing-page .ledger li.is-net {
-  background: rgba(52, 199, 89, 0.10) !important;
-  border: 1px solid rgba(52, 199, 89, 0.28) !important;
+  background: rgba(28, 28, 30, 0.06) !important;
+  border: 1px solid rgba(28, 28, 30, 0.12) !important;
   border-radius: 10px !important;
   padding: 10px 12px !important;
   margin-top: 6px !important;
+  box-shadow: none !important;
 }
 
-.listing-page .ledger li.is-net b {
+.listing-page .ledger li.is-net b,
+.listing-page .ledger li.is-net.is-key b {
   font-size: 1.15em !important;
   font-weight: 700 !important;
-  color: #1b7a3a !important;
+  color: #1c1c1e !important;
 }
 
 .listing-page .ledger li.is-total b {
   font-weight: 700 !important;
   font-size: 1.05em !important;
+  color: #1c1c1e !important;
 }
 
-/* Home cards: capital + net */
 .home-page .emily-card__meta > div.is-key {
-  background: rgba(28, 28, 30, 0.045) !important;
+  background: rgba(28, 28, 30, 0.04) !important;
   border-radius: 10px !important;
   padding: 8px 10px !important;
   margin: 0 -4px !important;
@@ -16598,15 +16603,12 @@ body.stats-page {
   color: #3a3a3c !important;
 }
 
-.home-page .emily-card__meta > div.is-key dd {
+.home-page .emily-card__meta > div.is-key dd,
+.home-page .emily-card__meta > div.is-key:nth-child(2) dd {
   font-weight: 700 !important;
   font-size: 1.08em !important;
   color: #1c1c1e !important;
   letter-spacing: -0.02em !important;
-}
-
-.home-page .emily-card__meta > div.is-key:nth-child(2) dd {
-  color: #1b7a3a !important;
 }
 
 /* =========================================================
@@ -16726,4 +16728,46 @@ body.stats-page {
 .listing-page .next-step,
 .listing-page #prossimo-passo {
   display: none !important;
+}
+
+
+/* =========================================================
+   NO-COLOR LOCK — kill green / mint / soft-tint leftovers
+   ========================================================= */
+.listing-page .money__cell--out,
+.money__cell--out,
+.listing-page .money__cell--in,
+.money__cell--in {
+  background: #fff !important;
+  background-image: none !important;
+}
+
+.listing-page .ledger li.is-net,
+.listing-page .ledger li.is-net.is-key,
+.listing-page .ledger li.is-net b,
+.listing-page .money__cell--out strong,
+.money__cell--out strong,
+.home-page .emily-card__meta > div.is-key:nth-child(2) dd {
+  color: #1c1c1e !important;
+}
+
+.listing-page .ledger li.is-net,
+.listing-page .ledger li.is-net.is-key {
+  background: rgba(28, 28, 30, 0.06) !important;
+  border-color: rgba(28, 28, 30, 0.12) !important;
+  box-shadow: none !important;
+}
+
+/* neutralize blue mark.hl pills that read as “color layout” */
+.listing-page mark.hl,
+.listing-page .hl,
+.home-page mark.hl,
+.home-page .hl {
+  background: rgba(28, 28, 30, 0.08) !important;
+  color: #1c1c1e !important;
+}
+
+.listing-page [style*="34c759"],
+.listing-page [style*="52, 199"] {
+  box-shadow: none !important;
 }

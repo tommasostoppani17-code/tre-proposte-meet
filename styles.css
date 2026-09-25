@@ -17396,3 +17396,291 @@ body.stats-page {
 .stats-page .stats-slide {
   display: none !important;
 }
+
+/* =========================================================
+   RAIL FIX — calm sticky, home card layout, no stretch weirdness
+   ========================================================= */
+@media (min-width: 901px) {
+  .listing-page .listing-layout {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    align-items: flex-start !important;
+    gap: 1.5rem !important;
+    width: 100% !important;
+  }
+
+  .listing-page .listing-main {
+    flex: 1 1 auto !important;
+    width: auto !important;
+    max-width: none !important;
+    min-width: 0 !important;
+  }
+
+  .listing-page .listing-rail,
+  .listing-page aside.listing-rail {
+    display: block !important;
+    position: sticky !important;
+    top: calc(var(--bar-h, 52px) + 0.75rem) !important;
+    flex: 0 0 19.5rem !important;
+    width: 19.5rem !important;
+    max-width: 19.5rem !important;
+    height: auto !important;
+    max-height: calc(100dvh - var(--bar-h, 52px) - 1.5rem) !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: visible !important;
+    transform: none !important;
+    align-self: flex-start !important;
+    background: transparent !important;
+    border: 0 !important;
+    box-shadow: none !important;
+  }
+
+  .listing-page .listing-rail__inner,
+  .listing-page .listing-rail__inner.apple-scroll {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0.75rem !important;
+    height: auto !important;
+    max-height: calc(100dvh - var(--bar-h, 52px) - 1.5rem) !important;
+    min-height: 0 !important;
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    background: transparent !important;
+    border: 0 !important;
+    box-shadow: none !important;
+  }
+
+  .listing-page .listing-rail__card,
+  .listing-page .listing-rail__toc,
+  .listing-page .rail-switch {
+    flex: 0 0 auto !important;
+    width: 100% !important;
+    margin: 0 !important;
+    background: #fff !important;
+    border: 1px solid rgba(0, 0, 0, 0.06) !important;
+    border-radius: 0.85rem !important;
+    box-shadow: 0 0.15rem 0.85rem rgba(0, 0, 0, 0.045) !important;
+  }
+
+  .listing-page .listing-rail__card {
+    padding: 1rem 1.05rem 1.1rem !important;
+  }
+
+  .listing-page .listing-rail__card .booking-card__amount {
+    display: block !important;
+    font-size: 1.15rem !important;
+    font-weight: 500 !important;
+    letter-spacing: -0.025em !important;
+    color: #1d1d1f !important;
+    line-height: 1.2 !important;
+  }
+
+  .listing-page .listing-rail__card .booking-card__period {
+    display: block !important;
+    margin-top: 0.25rem !important;
+    font-size: 0.72rem !important;
+    color: #86868b !important;
+    font-weight: 400 !important;
+  }
+
+  .listing-page .listing-rail__card .booking-card__facts {
+    list-style: none !important;
+    margin: 0.85rem 0 0 !important;
+    padding: 0 !important;
+  }
+
+  .listing-page .listing-rail__card .booking-card__facts li {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: baseline !important;
+    justify-content: space-between !important;
+    gap: 0.5rem !important;
+    padding: 0.45rem 0 !important;
+    border-bottom: 1px solid #efefef !important;
+    font-size: 0.84rem !important;
+  }
+
+  .listing-page .listing-rail__card .booking-card__facts li:last-child {
+    border-bottom: 0 !important;
+  }
+
+  .listing-page .listing-rail__card .booking-card__facts span {
+    color: #86868b !important;
+    font-weight: 400 !important;
+    font-size: 0.72rem !important;
+  }
+
+  .listing-page .listing-rail__card .booking-card__facts b {
+    color: #1d1d1f !important;
+    font-weight: 500 !important;
+    font-size: 0.84rem !important;
+    text-align: right !important;
+  }
+
+  .listing-page .listing-rail__card .portal-cta {
+    display: block !important;
+    width: 100% !important;
+    text-align: center !important;
+    margin-top: 0.9rem !important;
+    box-sizing: border-box !important;
+  }
+
+  .listing-page .listing-rail__toc {
+    padding: 0.85rem 1.05rem 0.95rem !important;
+  }
+
+  .listing-page .listing-rail__label {
+    margin: 0 0 0.45rem !important;
+    font-size: 0.68rem !important;
+    font-weight: 500 !important;
+    color: #86868b !important;
+    letter-spacing: 0.01em !important;
+  }
+
+  .listing-page .listing-rail__toc a {
+    display: block !important;
+    padding: 0.5rem 0 !important;
+    border-bottom: 1px solid #efefef !important;
+    font-size: 0.84rem !important;
+    font-weight: 400 !important;
+    color: #1d1d1f !important;
+    text-decoration: none !important;
+    line-height: 1.35 !important;
+  }
+
+  .listing-page .listing-rail__toc a:last-of-type {
+    border-bottom: 0 !important;
+  }
+
+  /* City switch — fixed row cards, no flex stretch */
+  .listing-page .rail-switch {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0.5rem !important;
+    padding: 0.85rem 0.85rem 0.95rem !important;
+    margin-top: 0 !important;
+    overflow: visible !important;
+    min-height: 0 !important;
+  }
+
+  .listing-page .rail-switch__top {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 0.5rem !important;
+    flex: 0 0 auto !important;
+    margin: 0 0 0.15rem !important;
+    padding: 0 !important;
+    border: 0 !important;
+  }
+
+  .listing-page .rail-switch__top .listing-rail__label {
+    margin: 0 !important;
+  }
+
+  .listing-page .rail-switch__home {
+    font-size: 0.72rem !important;
+    font-weight: 500 !important;
+    color: #0071e3 !important;
+    text-decoration: none !important;
+  }
+
+  .listing-page .rail-switch__card {
+    position: relative !important;
+    display: grid !important;
+    grid-template-columns: 4.25rem minmax(0, 1fr) !important;
+    grid-template-rows: auto !important;
+    align-items: center !important;
+    gap: 0.65rem !important;
+    flex: 0 0 auto !important;
+    min-height: 0 !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 0.45rem !important;
+    border-radius: 0.65rem !important;
+    border: 1px solid rgba(0, 0, 0, 0.06) !important;
+    background: #fff !important;
+    box-shadow: none !important;
+    text-decoration: none !important;
+    color: inherit !important;
+    overflow: hidden !important;
+  }
+
+  .listing-page .rail-switch__card.is-here {
+    background: #f5f5f7 !important;
+    border-color: rgba(0, 0, 0, 0.1) !important;
+  }
+
+  .listing-page .rail-switch__media {
+    width: 4.25rem !important;
+    height: 3.35rem !important;
+    min-height: 3.35rem !important;
+    max-height: 3.35rem !important;
+    border-radius: 0.5rem !important;
+    background-size: cover !important;
+    background-position: center !important;
+    align-self: center !important;
+  }
+
+  .listing-page .rail-switch__body {
+    min-width: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0.12rem !important;
+    padding-right: 1.6rem !important;
+  }
+
+  .listing-page .rail-switch__body strong {
+    font-size: 0.84rem !important;
+    font-weight: 500 !important;
+    color: #1d1d1f !important;
+    letter-spacing: -0.015em !important;
+    line-height: 1.25 !important;
+  }
+
+  .listing-page .rail-switch__tag {
+    font-size: 0.68rem !important;
+    color: #86868b !important;
+    font-weight: 400 !important;
+  }
+
+  .listing-page .rail-switch__desc {
+    display: none !important; /* keep rail compact like home */
+  }
+
+  .listing-page .rail-switch__here {
+    position: absolute !important;
+    top: 0.45rem !important;
+    right: 0.45rem !important;
+    margin: 0 !important;
+    padding: 0.15rem 0.4rem !important;
+    border-radius: 980px !important;
+    background: #1d1d1f !important;
+    color: #fff !important;
+    font-size: 0.62rem !important;
+    font-weight: 500 !important;
+    line-height: 1.2 !important;
+  }
+}
+
+/* Portrait / narrow: hide rail (unchanged intent) */
+@media (orientation: portrait), (max-width: 900px) {
+  .listing-page .listing-rail,
+  .listing-page aside.listing-rail {
+    display: none !important;
+  }
+
+  .listing-page .listing-layout {
+    display: block !important;
+  }
+
+  .listing-page .listing-main {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+}

@@ -16409,3 +16409,102 @@ body.listing-page,
 body.stats-page {
   padding-top: calc(var(--bar-h, 52px) + env(safe-area-inset-top, 0px)) !important;
 }
+
+/* =========================================================
+   PORTRAIT: hide right rail
+   TABLES: keep horizontal columns (no stacked vertical rows)
+   ========================================================= */
+@media (orientation: portrait), (max-width: 900px) {
+  .listing-page .listing-rail,
+  .listing-page aside.listing-rail {
+    display: none !important;
+  }
+
+  .listing-page .listing-layout {
+    display: block !important;
+  }
+
+  .listing-page .listing-main {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: none !important;
+  }
+}
+
+/* Ledger / yr-table: always label | value on one horizontal line */
+.listing-page .ledger li,
+.ledger li {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: baseline !important;
+  justify-content: space-between !important;
+  gap: 0.75rem !important;
+}
+
+.listing-page .ledger li span,
+.ledger li span {
+  flex: 1 1 auto !important;
+  min-width: 0 !important;
+}
+
+.listing-page .ledger li b,
+.ledger li b {
+  flex: 0 0 auto !important;
+  text-align: right !important;
+  white-space: nowrap !important;
+}
+
+.listing-page .yr-table-wrap,
+.yr-table-wrap {
+  width: 100% !important;
+  overflow-x: auto !important;
+  -webkit-overflow-scrolling: touch !important;
+}
+
+.listing-page .yr-table,
+.yr-table {
+  display: table !important;
+  width: 100% !important;
+  min-width: 32rem !important;
+  border-collapse: collapse !important;
+  table-layout: auto !important;
+}
+
+.listing-page .yr-table thead,
+.listing-page .yr-table tbody,
+.listing-page .yr-table tr {
+  display: table-row-group !important;
+}
+
+.listing-page .yr-table thead {
+  display: table-header-group !important;
+}
+
+.listing-page .yr-table tr {
+  display: table-row !important;
+}
+
+.listing-page .yr-table th,
+.listing-page .yr-table td {
+  display: table-cell !important;
+  white-space: nowrap !important;
+  vertical-align: middle !important;
+}
+
+/* Kill any “cardize table on mobile” patterns */
+@media (max-width: 900px) {
+  .listing-page .yr-table th,
+  .listing-page .yr-table td {
+    display: table-cell !important;
+  }
+
+  .listing-page .yr-table th::before,
+  .listing-page .yr-table td::before {
+    content: none !important;
+    display: none !important;
+  }
+
+  .listing-page .money {
+    grid-template-columns: 1fr 1fr !important;
+  }
+}
